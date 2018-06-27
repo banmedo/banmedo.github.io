@@ -1,7 +1,8 @@
 var app = {};
 
 app.createConstants  = function(){
-  app.CSV = 'data.csv'
+  app.CSV = 'data.csv';
+  app.GJSON = 'district.geojson';
 };
 
 app.createHelpers = function(){
@@ -10,9 +11,23 @@ app.createHelpers = function(){
     $.ajax({
       url:app.CSV,
       success:function(data){
-        console.log(data);
+        // console.log(data);
       }
     });
+  }
+
+  app.loadGeojson = function(){
+    app.geomLoading = $.ajax({
+        dataType : 'json',
+        url :app.GJSON,
+        success: function(fcoll){
+          app.activeLayer = L.geoJson(fcoll,{color:'#222222',fillOpacity:"0", weight:"1.5"}).addTo(app.map);
+          console.log(app.activeLayer);
+          app.geomCache[l1] = fcoll;
+          app.map.fitBounds(app.activeLayer.getBounds());
+          // applyMask(fcoll);
+        }
+      });
   }
 };
 
@@ -26,8 +41,9 @@ app.initUI = function(){
 app.initialize = function(){
   app.createConstants();
   app.createHelpers();
-  
+
   app.initUI();
+  app.loadGeojson();
   app.readCSV();
 };
 
