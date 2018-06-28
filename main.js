@@ -82,7 +82,7 @@ app.createHelpers = function(){
         var div = L.DomUtil.create('div', 'info dropdown');
         var html = '<select id="dataDropdown" onchange="app.dropdownChanged()" style="width:220px">';
         for (var i = app.NAMEINDEX+1; i< array.length; i++){
-          var label = (app.labelObject[array[i]])?(app.labelObject[array[i]]+" ("+array[i]+")"):array[i];
+          var label = (app.labelObject[array[i]])?(app.labelObject[array[i]]+"<i> ("+array[i]+")<i>"):("<i>("+array[i]+")</i>");
           html += '<option value="'+array[i]+'">'+label+'</option>';
         }
         html += '</select>'
@@ -163,8 +163,10 @@ app.createHelpers = function(){
     app.legend = L.control({position: 'bottomright'});
     app.legend.onAdd = function (map) {
         var div = L.DomUtil.create('div', 'info legend');
+        var field = $("#dataDropdown").val();
+        var label = (app.labelObject[field])?(app.labelObject[field]+"<i> ("+field+")<i>"):("<i>("+field+")</i>");
         var html = '<h4 class="legend-title" style="margin:5px">Legend</h4>';
-        html += '<h5 class="legend-field" style="margin:5px"><i>'+$("#dataDropdown").val()+'</i></h5>';
+        html += '<h5 class="legend-field" style="margin:5px"><i>'+label+'</i></h5>';
         html += '<span class="legend-label">'+app.maxData+'</span>';
         var startColor = app.COLORS[gradIndex][0];
         var endColor = app.COLORS[gradIndex][1];
