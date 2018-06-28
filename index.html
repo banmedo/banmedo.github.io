@@ -3,6 +3,8 @@
   <title>CBS Visualization</title>
   <!-- stylesheets -->
   <link rel='stylesheet' href='leaflet.css'/>
+  <link rel='stylesheet' href='bootstrap-modal.css'/>
+  <link rel='stylesheet' href='select2.min.css'/>
 
 
   <style>
@@ -16,14 +18,51 @@
       height:100%;
       width:100%;
     }
+    .legend{
+      background:white;
+      border: 2px solid rgba(0,0,0,0.2);
+      border-radius: 2px;
+      padding:10px;
+    }
+    .modal-body{
+      max-height:70%;
+      overflow-y:auto;
+    }
   </style>
 </head>
 <body>
+  <!-- map -->
   <div id="map"></div>
 
+  <!-- modal -->
+  <!-- Modal -->
+  <div id="dataModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
   <!-- js -->
   <script src='jquery-2.2.0.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.8.9/jquery.csv.min.js'></script>
   <script src='leaflet.js'></script>
+  <!-- <script src='lmask.js'></script> -->
+  <script src='bootstrap-modal.min.js'></script>
+  <script src='gradient-generator.js'></script>
+  <script src='select2.min.js'></script>
   <script src='main.js'></script>
 </body>
 </html>
