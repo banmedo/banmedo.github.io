@@ -2,16 +2,19 @@ var app = {};
 
 app.createConstants  = function(){
   app.CSV = 'data.csv';
+  app.LABELS = 'dataLabels.csv';
   app.GJSON = 'district.geojson';
   app.NAMEINDEX = 1;
   app.GEOMNAMEFIELD = 'DISTRICT';
   app.COLORS = [
     ['#FFEDA0','#800026'],
-    ['#000','#FFF']
+    ['#000','#FFF'],
+    ['#FFF','#00F']
   ];
   app.COLORNAMES = [
     'Yellow To Brown',
-    'Black To White'
+    'Black To White',
+    'White To Blue'
   ]
 };
 
@@ -28,6 +31,27 @@ app.createHelpers = function(){
           app.dataObject[app.dataArray[i][app.NAMEINDEX].toUpperCase()] = app.dataArray[i];
         }
         app.headers = data[0];
+        app.readDataLabels();
+      }
+    });
+  }
+  // read data labels from csv
+  app.readDataLabels = function(){
+    app.csvLoading = $.ajax({
+      url:app.LABELS,
+      success:function(data){
+        var data = $.csv.toArrays(data);
+
+        var labelArray = data.splice(1);
+        // console.log(labelArray);
+        app.labelObject = {};
+        for (var i=0; i<labelArray.length; i++){
+          var label = labelArray[i][0];
+          var fields = labelArray[i][1].split(',');
+          for (var j = 0; j<fields.length;j++){
+            app.labelObject[fields[j].trim()] = label;
+          }
+        }
         app.buildDropdownControl(app.headers);
       }
     });
@@ -58,7 +82,8 @@ app.createHelpers = function(){
         var div = L.DomUtil.create('div', 'info dropdown');
         var html = '<select id="dataDropdown" onchange="app.dropdownChanged()" style="width:220px">';
         for (var i = app.NAMEINDEX+1; i< array.length; i++){
-          html += '<option>'+array[i]+'</option>';
+          var label = (app.labelObject[array[i]])?(app.labelObject[array[i]]+" ("+array[i]+")"):array[i];
+          html += '<option value="'+array[i]+'">'+label+'</option>';
         }
         html += '</select>'
         div.innerHTML = html;
