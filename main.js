@@ -5,17 +5,13 @@ app.createConstants  = function(){
   app.LABELS = 'dataLabels.csv';
   app.GJSON = 'district.geojson';
   app.NAMEINDEX = 1;
+  app.BASELAYER = 'https://api.mapbox.com/styles/v1/banmedo/cj5djv3ym0ij62sobk6h0s47b/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYmFubWVkbyIsImEiOiJhSklqeEZzIn0.rzfSxO3cVUhghA2sJN378A';
   app.GEOMNAMEFIELD = 'DISTRICT';
   app.COLORS = [
-    ['#FFEDA0','#800026'],
-    ['#000','#FFF'],
-    ['#FFF','#00F']
+    ['Yellow To Brown','#FFEDA0','#800026'],
+    ['Black To White','#000','#FFF'],
+    ['White To Blue','#FFF','#00F']
   ];
-  app.COLORNAMES = [
-    'Yellow To Brown',
-    'Black To White',
-    'White To Blue'
-  ]
 };
 
 app.createHelpers = function(){
@@ -119,7 +115,7 @@ app.createHelpers = function(){
         var div = L.DomUtil.create('div', 'info dropdown');
         var html = '<select id="gradientDropdown" style="width:220px" onchange="app._applyGradient()">';
         for (var i = 0; i< app.COLORS.length; i++){
-          html += '<option value = '+i+'>'+app.COLORNAMES[i]+'</option>';
+          html += '<option value = '+i+'>'+app.COLORS[i][0]+'</option>';
         }
         html += '</select>';
         div.innerHTML = html;
@@ -133,18 +129,22 @@ app.createHelpers = function(){
   app._styleSelect2 = function(state){
     if (state.loading) return state;
     var index = parseInt($(state.element).val());
-    html = '<div style="width:200px;height:10px;background: linear-gradient(to right, '+app.COLORS[index][0]+' , '+app.COLORS[index][1]+');"></div>'
+    html = '<div style="width:200px;height:10px;background: linear-gradient(to right, '+app.COLORS[index][1]+' , '+app.COLORS[index][2]+');"></div>'
     return $(html);
   }
   app._applyGradient = function (){
     var gradIndex = $("#gradientDropdown").val();
-    var gradient = GradientGenerator.createGradient(app.COLORS[gradIndex]);
+    var gradient = GradientGenerator.createGradient(app._getGradientColorList(gradIndex));
     app.layer.eachLayer(function(thislayer){
       var data = thislayer.feature.properties.data;
       var ratio = (data - app.minData)/ (app.maxData - app.minData);
       thislayer.setStyle({fillColor:gradient.getColorHexAt(ratio),fillOpacity:"0.8", weight:"1", opacity:1, color:'black'})
     });
     app._updateLegend();
+  }
+  // get gradient color list
+  app._getGradientColorList = function(index){
+    return [app.COLORS[index][1],app.COLORS[index][2]]
   }
   // handle data view changed
   app.dropdownChanged = function(e){
@@ -176,7 +176,7 @@ app.createHelpers = function(){
   app._updateLegend = function(){
     if (app.legend) app.map.removeControl(app.legend);
     var gradIndex = parseInt($("#gradientDropdown").val());
-    var gradient = GradientGenerator.createGradient(app.COLORS[gradIndex]);
+    var gradient = GradientGenerator.createGradient(app._getGradientColorList(gradIndex));
     app.legend = L.control({position: 'bottomright'});
     app.legend.onAdd = function (map) {
         var div = L.DomUtil.create('div', 'info legend');
@@ -185,8 +185,8 @@ app.createHelpers = function(){
         var html = '<h4 class="legend-title" style="margin:5px">Legend</h4>';
         html += '<h5 class="legend-field" style="margin:5px"><i>'+label+'</i></h5>';
         html += '<span class="legend-label">'+app.maxData+'</span>';
-        var startColor = app.COLORS[gradIndex][0];
-        var endColor = app.COLORS[gradIndex][1];
+        var startColor = app.COLORS[gradIndex][1];
+        var endColor = app.COLORS[gradIndex][2];
         html += '<div style="height:200px;width:10px;background: linear-gradient('+endColor+' , '+startColor+')">&nbsp;</div>'
         html += '<span class="legend-label">'+app.minData+'</span>';
         div.innerHTML = html;
@@ -210,14 +210,13 @@ app.createHelpers = function(){
     contenthtml += '</table>';
     $('.modal-body').html(contenthtml);
     $('#dataModal').modal('show');
-
   }
 };
 
 // initialize UI
 app.initUI = function(){
   app.map = L.map('map').setView([27, 84], 4);
-  app.baseMap = L.tileLayer('https://api.mapbox.com/styles/v1/banmedo/cj5djv3ym0ij62sobk6h0s47b/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYmFubWVkbyIsImEiOiJhSklqeEZzIn0.rzfSxO3cVUhghA2sJN378A');
+  app.baseMap = L.tileLayer(app.BASELAYER);
   app.baseMap.addTo(app.map);
   app.buildGradientControl();
 };
