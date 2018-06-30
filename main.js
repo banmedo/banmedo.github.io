@@ -67,6 +67,18 @@ app.createHelpers = function(){
           style:{color:'#222222',fillOpacity:"0", weight:"1.5"},
           onEachFeature: function(feature, layer){
             layer.on('click',app.showLayerData);
+            layer.on('mouseover', function (e) {
+              this.bindPopup(app._getFieldLabel($("#dataDropdown").val())
+                          +":"+this.feature.properties.data);
+              this.openPopup();
+            });
+            layer.on('mousemove', function (e) {
+              var popup = e.target.getPopup();
+              popup.setLatLng(e.latlng);
+            });
+            layer.on('mouseout', function (e) {
+              this.closePopup();
+            });
           }
         }).addTo(app.map);
         app.map.fitBounds(app.layer.getBounds());
@@ -74,6 +86,11 @@ app.createHelpers = function(){
       }
     });
   }
+  // function to get text based on field NAME
+  app._getFieldLabel = function(fieldname){
+    return (app.labelObject[fieldname])?(app.labelObject[fieldname]+"<i> ("+fieldname+")<i>"):("<i>("+fieldname+")</i>");
+  }
+
   // build dropdown data control
   app.buildDropdownControl = function (array){
     if(app.dropdown) app.map.removeControl(app.dropdown);
@@ -82,7 +99,7 @@ app.createHelpers = function(){
         var div = L.DomUtil.create('div', 'info dropdown');
         var html = '<select id="dataDropdown" onchange="app.dropdownChanged()" style="width:220px">';
         for (var i = app.NAMEINDEX+1; i< array.length; i++){
-          var label = (app.labelObject[array[i]])?(app.labelObject[array[i]]+"<i> ("+array[i]+")<i>"):("<i>("+array[i]+")</i>");
+          var label = app._getFieldLabel(array[i]);
           html += '<option value="'+array[i]+'">'+label+'</option>';
         }
         html += '</select>'
@@ -164,7 +181,7 @@ app.createHelpers = function(){
     app.legend.onAdd = function (map) {
         var div = L.DomUtil.create('div', 'info legend');
         var field = $("#dataDropdown").val();
-        var label = (app.labelObject[field])?(app.labelObject[field]+"<i> ("+field+")<i>"):("<i>("+field+")</i>");
+        var label = app._getFieldLabel(field);
         var html = '<h4 class="legend-title" style="margin:5px">Legend</h4>';
         html += '<h5 class="legend-field" style="margin:5px"><i>'+label+'</i></h5>';
         html += '<span class="legend-label">'+app.maxData+'</span>';
@@ -183,9 +200,9 @@ app.createHelpers = function(){
     var name = e.sourceTarget.feature.properties[app.GEOMNAMEFIELD];
     var thisdata = app.dataObject[name];
     $('.modal-title').html(name);
-    var contenthtml = '<table id="data-table">';
+    var contenthtml = '<table border="1" id="data-table">';
     for (var i = app.NAMEINDEX+1; i< app.headers.length; i++){
-      var head = app.headers[i];
+      var head = app._getFieldLabel(app.headers[i]);
       var data = thisdata[i];
       // console.log(head,data);
       contenthtml+= '<tr><th>'+head+'</th><td>'+data+'</td>';
