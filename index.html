@@ -14,15 +14,50 @@
       height:100%;
       width:100%;
     }
+    .hidden{
+      display:none;
+    }
+    #category-container{
+      height:100%;
+      width:25%;
+      margin:0;
+      background:white;
+      float:left;
+      color:black;
+      overflow-y:auto;
+      transition-duration: 1s;
+    }
     #map{
       height:100%;
-      width:100%;
+      width:75%;
+      margin:0;
+      float:right;
+      transition-duration: 1s;
     }
     .legend{
-      background:white;
-      border: 2px solid rgba(0,0,0,0.2);
+      background:rgba(255,255,255,0.8);
+      border: 2px solid rgba(0,0,0,0.4);
       border-radius: 2px;
       padding:10px;
+      max-width:150px;
+      text-align: center;
+    }
+    .legend div{
+      margin:auto;
+    }
+    .sidebarControl{
+      height:40px;
+      width:40px;
+      background:white;
+      border: 2px solid rgba(0,0,0,0.4);
+      border-radius: 2px;
+      text-align:center;
+      font-size: 24px;
+      display: table-cell;
+      vertical-align: center;
+    }
+    .sidebarControl div{
+      cursor:pointer;
     }
     .modal-title{
       text-align: center;
@@ -30,6 +65,9 @@
     .modal-body{
       max-height:70%;
       overflow-y:auto;
+    }
+    a{
+      cursor:pointer;
     }
     table{
       border-color:lightgray;
@@ -40,9 +78,58 @@
       line-height:2em;
       padding:0px 5px;
     }
+    ul{
+      text-decoration: none;
+    }
+    .category-list{
+      padding:0px 10px;
+      font-size:20px;
+    }
+    .category-list div{
+      margin-top:10px;
+    }
+    .sidebar-close{
+      width:100%;
+      color:gray;
+      text-align:right;
+      padding:10px;
+      font-size:3em;
+      line-height:1;
+    }
+    .collapsebtn-container{
+      cursor:pointer;
+    }
+    .collapsebtn-container:hover{
+      background-color: lightgray;
+    }
+    .collapsebtn{
+      float:right;
+    }
+    ul.fields{
+      /* list-style-type: none; */
+      margin: 0;
+      padding: 0;
+      margin-left:20px;
+      font-size:15px;
+      margin-bottom:5px;
+    }
+    .dataField{
+      cursor:pointer;
+    }
+    .dataField:hover{
+      background-color: lightgray;
+    }
   </style>
 </head>
 <body>
+  <!-- category pane -->
+  <div id="category-container">
+    <div class="sidebar-close"><a onclick="app.hideSidebar()">&times;</a></div>
+    <div class="category-list">
+      <!-- <ul></ul> -->
+    </div>
+  </div>
+
   <!-- map -->
   <div id="map"></div>
 

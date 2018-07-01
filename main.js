@@ -5,6 +5,10 @@ app.createConstants  = function(){
   app.LABELS = 'dataLabels.csv';
   app.GJSON = 'district.geojson';
   app.NAMEINDEX = 1;
+  app.HEADERLINE = 1;
+  app.CATEGORYINDEX = 0;
+  app.LABELINDEX = 1;
+  app.FIELDINDEX = 2;
   app.BASELAYER = 'https://api.mapbox.com/styles/v1/banmedo/cj5djv3ym0ij62sobk6h0s47b/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYmFubWVkbyIsImEiOiJhSklqeEZzIn0.rzfSxO3cVUhghA2sJN378A';
   app.GEOMNAMEFIELD = 'DISTRICT';
   app.COLORS = [
@@ -23,6 +27,7 @@ app.createHelpers = function(){
         var data = $.csv.toArrays(data);
         app.dataArray = data.splice(1);
         app.dataObject = {};
+        app.dataCategories = {};
         for (var i=0; i<app.dataArray.length; i++){
           app.dataObject[app.dataArray[i][app.NAMEINDEX].toUpperCase()] = app.dataArray[i];
         }
@@ -37,20 +42,36 @@ app.createHelpers = function(){
       url:app.LABELS,
       success:function(data){
         var data = $.csv.toArrays(data);
-
-        var labelArray = data.splice(1);
+        var labelArray = data.splice(app.HEADERLINE);
         // console.log(labelArray);
         app.labelObject = {};
+        app.categoryObject = {};
         for (var i=0; i<labelArray.length; i++){
-          var label = labelArray[i][0];
-          var fields = labelArray[i][1].split(',');
-          for (var j = 0; j<fields.length;j++){
-            app.labelObject[fields[j].trim()] = label;
-          }
+          var category = labelArray[i][app.CATEGORYINDEX];
+          var label = labelArray[i][app.LABELINDEX];
+          var field = labelArray[i][app.FIELDINDEX];
+          app.labelObject[field.trim()] = label;
+          if (! app.categoryObject[category]) app.categoryObject[category] = [];
+          app.categoryObject[category].push(field);
         }
+        app.buildCategoryList(app.categoryObject);
         app.buildDropdownControl(app.headers);
       }
     });
+  }
+  // build category lsit on sidebar
+  app.buildCategoryList = function(data){
+    var html = '';
+    var categories = Object.keys(data);
+    for (var i = 0; i < categories.length;i++){
+      html += '<div class="collapsebtn-container" onClick=app.expandCategory(this) target="cat'+i+'">'+categories[i]+'<a class="collapsebtn">+</a></div><ul class="fields cat'+i+' hidden">';
+      var fields = data[categories[i]];
+      for (var j = 0; j < fields.length;j++){
+        html += '<li class="dataField" field="'+fields[j]+'" onclick=app.fromCategory(this)>'+app._getFieldLabel(fields[j])+'</li>';
+      }
+      html += '</ul>';
+    }
+    $('.category-list').html(html);
   }
   // load district geojson
   app.loadGeojson = function(){
@@ -84,7 +105,7 @@ app.createHelpers = function(){
   }
   // function to get text based on field NAME
   app._getFieldLabel = function(fieldname){
-    return (app.labelObject[fieldname])?(app.labelObject[fieldname]+"<i> ("+fieldname+")<i>"):("<i>("+fieldname+")</i>");
+    return (app.labelObject[fieldname])?(app.labelObject[fieldname]+"<i> ("+fieldname+")</i>"):("<i>("+fieldname+")</i>");
   }
 
   // build dropdown data control
@@ -106,6 +127,20 @@ app.createHelpers = function(){
     app.dropdown.addTo(app.map);
     $("#dataDropdown").select2();
     app.dropdownChanged();
+  }
+  // add a sidebar Control
+  app.addSidebarControl = function(){
+    if (app.sidebarControl) app.map.removeControl(app.sidebarControl);
+    app.sidebarControl = L.control({position: 'topleft'});
+    app.sidebarControl.onAdd = function (map) {
+        var div = L.DomUtil.create('div', 'info sidebarControl');
+        var html = "<div onclick=app.showSidebar()>&#9776;</div>";
+        div.innerHTML = html;
+        div.firstChild.onmousedown = div.firstChild.ondblclick = L.DomEvent.stopPropagation;
+        return div;
+    };
+    app.sidebarControl.addTo(app.map);
+    $("#gradientDropdown").select2({templateResult: app._styleSelect2});
   }
   // build dropdown data control
   app.buildGradientControl = function (){
@@ -211,6 +246,38 @@ app.createHelpers = function(){
     $('.modal-body').html(contenthtml);
     $('#dataModal').modal('show');
   }
+  app.expandCategory = function(element){
+    var cname = $(element).attr('target');
+    var target = $('.'+cname);
+    var child = $(target).find('a');
+    if (target.hasClass('hidden')){
+      target.removeClass('hidden');
+      child.html('-');
+    }else{
+      target.addClass('hidden');
+      child.html('+');
+    }
+  }
+  app.fromCategory = function(element){
+    var target = $(element).attr('field');
+    $('#dataDropdown').val(target).trigger('change');
+  }
+  app.showSidebar = function(){
+    if (app.sidebarControl) app.map.removeControl(app.sidebarControl);
+    delete(app.sidebarControl);
+    var sidebar = $('#category-container');
+    var map = $('#map');
+    sidebar.css('margin-left', 0);
+    map.css('width','75%');
+  }
+  app.hideSidebar = function(){
+    app.addSidebarControl();
+    var sidebar = $('#category-container');
+    var map = $('#map');
+    var width = sidebar.width();
+    sidebar.css('margin-left', '-25%');
+    map.css('width','100%');
+  }
 };
 
 // initialize UI
@@ -219,6 +286,7 @@ app.initUI = function(){
   app.baseMap = L.tileLayer(app.BASELAYER);
   app.baseMap.addTo(app.map);
   app.buildGradientControl();
+  // app.addSidebarControl();
 };
 
 app.initialize = function(){
