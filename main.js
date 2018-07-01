@@ -249,7 +249,7 @@ app.createHelpers = function(){
   app.expandCategory = function(element){
     var cname = $(element).attr('target');
     var target = $('.'+cname);
-    var child = $(target).find('a');
+    var child = $(element).find('a');
     if (target.hasClass('hidden')){
       target.removeClass('hidden');
       child.html('-');
