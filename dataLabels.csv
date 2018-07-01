@@ -1,325 +1,325 @@
-﻿Category,view_name,actual_name,,,
-Population,Total Population,pop_dyna_pop,,,
-Population,Percentage change in population,pop_dyna_per_pop_chng,,,
-Population,Percentage change in population,pop_dyna_1981-1991,,,
-Population,Percentage change in population,pop_dyna_1991-2001,,,
-Population,Population density (per sq.km),pop_dyna_pop_den,,,
-Population,Singulate mean age at marriage,pop_dyna_sin_mean_mdg,,,
-Population,Singulate mean age at marriage by sex,pop_dyna_sin_mdg_m,,,
-Population,Singulate mean age at marriage by sex,pop_dyna_sin_mdg_f,,,
-Population,Mean age at first marriage,pop_dyna_mn_fst_age,,,
-Population,Mean age at first marriage by sex,pop_dyna_mn_fst_m,,,
-Population,Mean age at first marriage by sex,pop_dyna_mn_fst_f,,,
-Population,Mean age at child bearing,pop_dyna_mn_age-cb,,,
-Population,Crude birth rate,pop_dyna_cbr,,,
-Population,Crude death rate,pop_dyna_cdr,,,
-Population,Infant mortality rate,pop_dyna_imr,,,
-Population,Infant mortality rate by sex,pop_dyna_m_imr,,,
-Population,Infant mortality rate by sex,pop_dyna_f_imr,,,
-Population,Under 5 mortality rate,pop_dyna_u5mr,,,
-Population,Under 5 mortality rate by sex,pop_dyna_m_u5mr,,,
-Population,Under 5 mortality rate by sex,pop_dyna_f_u5mr,,,
-Population,Index of ageing,pop_dyna_ind_agn,,,
-Population,Index of ageing by sex,pop_dyna_m_idn_agn,,,
-Population,Index of ageing by sex,pop_dyna_f_idn_agn,,,
-Population,Sex ratio at birth,pop_char_sr_birth,,,
-Population,Sex ratio,pop_char_sr,,,
-Population,Child woman ratio,pop_char_cwr,,,
-Population,Total dependency ratio,pop_char_t_dr,,,
-Population,Child dependency ratio,pop_char_ch_dr,,,
-Population,Child dependency ratio by sex,pop_char_m_ch_dr,,,
-Population,Child dependency ratio by sex,pop_char_f_ch_dr,,,
-Population,Aged dependency ratio,pop_char_aged_dr,,,
-Population,Percentage of population aged 75 years and above,pop_char_per-pop_75abv,,,
-Population,Percentage of population aged 75 years and above by sex,pop_char_m_per-pop_75abv,,,
-Population,Percentage of population aged 75 years and above by sex,pop_char_f_per-pop_75abv,,,
-Population,Distribution of absentee population,pop_char_dis_abs_pop,,,
-Population,Percentage of absentee population,pop_char_per_abs_pop,,,
-Population,Percentage of population with disability,pop_char_per_disab_pop,,,
-Population,Percentage of population by type of disability,pop_char_per-disab_pop_physically,,,
-Population,Percentage of population by type of disability,pop_char_per_disab_pop_mentally,,,
-Population,Percentage of child marriage,pop_char_per-child_mdg,,,
-Population,Percentage of widowed population by sex,pop_char_per_widow_pop,,,
-Population,Percentage of widowed population by sex,pop_char_per_widower_pop,,,
-Population,Percentage of divorced or separated population,pop_char_per_divorced_pop,,,
-Population,Predominant caste,pop_char_domt_caste,,,
-Population,Population by caste / ethnicity,pop_char_chhetree,,,
-Population,Population by caste / ethnicity,pop_char_brahman-hill,,,
-Population,Population by caste / ethnicity,pop_char_magar,,,
-Population,Population by caste / ethnicity,pop_char_tharu,,,
-Population,Population by caste / ethnicity,pop_char_tamang,,,
-Population,Population by caste / ethnicity,pop_char_newar,,,
-Population,Population by caste / ethnicity,pop_char_kami,,,
-Population,Population by caste / ethnicity,pop_char_musalman,,,
-Population,Population by caste / ethnicity,pop_char_yadav,,,
-Population,Population by caste / ethnicity,pop_char_rai,,,
-Population,Population by caste / ethnicity,pop_char_gurung,,,
-Population,Population by caste / ethnicity,pop_char_damai/dholi,,,
-Population,Population by caste / ethnicity,pop_char_thakuri,,,
-Population,Population by caste / ethnicity,pop_char_limbu,,,
-Population,Population by caste / ethnicity,pop_char_sarki,,,
-Population,Population by caste / ethnicity,pop_char_teli,,,
-Population,Population by mother tongue,pop_char_nepali,,,
-Population,Population by mother tongue,pop_char_maithili,,,
-Population,Population by mother tongue,pop_char_bhojpuri,,,
-Population,Population by mother tongue,pop_char_tharu,,,
-Population,Population by mother tongue,pop_char_tamang,,,
-Population,Population by mother tongue,pop_char_newar,,,
-Population,Population by mother tongue,pop_char_bajjika,,,
-Population,Population by mother tongue,pop_char_magar,,,
-Population,Population by mother tongue,pop_char_doteli,,,
-Population,Population by mother tongue,pop_char_urdu,,,
-Population,Population by mother tongue,pop_char_avadhi,,,
-Population,Population by mother tongue,pop_char_limbu,,,
-Population,Population by mother tongue,pop_char_gurung,,,
-Population,Population by mother tongue,pop_char_baitadeli,,,
-Population,Population by mother tongue,pop_char_rai,,,
-Population,Population by mother tongue,pop_char_achhami,,,
-Education,Literacy rate,edu_lit_rate,,,
-Education,Literacy rate by sex,edu_m_lit_rate,,,
-Education,Literacy rate by sex,edu_f_lit_rate,,,
-Education,Adult literacy rate,edu_ad_lit_rate,,,
-Education,Adult literacy rate by sex,edu_m-ad_lit_rate,,,
-Education,Adult literacy rate by sex,edu_f_ad_lit_rate,,,
-Education,Ratio of literate male to female,edu_lit_ratio(m:f),,,
-Education,Ratio of adult male to female literate population,edu_ad_lit_ratio(m:f),,,
-Education,Total literate population,edu_tot_lit_pop,,,
-Education,Percentage of literate population by education level completed,edu_per_beginer,,,
-Education,Percentage of literate population by education level completed,edu_per_primary,,,
-Education,Percentage of literate population by education level completed,edu_per_low_secondary,,,
-Education,Percentage of literate population by education level completed,edu_per_secondary,,,
-Education,Percentage of literate population by education level completed,edu_per_slc,,,
-Education,Percentage of literate population by education level completed,edu_per_inter,,,
-Education,Percentage of literate population by education level completed,edu_per_graduate,,,
-Education,Percentage of literate population by education level completed,edu_per_post_graduate,,,
-Education,Percentage of literate population by education level completed,edu_per-others,,,
-Education,Percentage of literate population by education level completed,edu_per_non_formal,,,
-Education,Percentage of literate population by education level completed,edu_per_not_stated,,,
-Education,School teacher ratio in school level of education,edu_stu_tch_ratio_primary,,,
-Education,School teacher ratio in school level of education,edu_stu_tch_ratio_l_secondary,,,
-Education,School teacher ratio in school level of education,edu_stu_tch_ratio_secondary,,,
-Education,School teacher ratio in school level of education,edu_stu_tch_ratio_hi_secondary,,,
-Education,Number of students per school,edu_stu_primary,,,
-Education,Number of students per school,edu_stu_low_secondary,,,
-Education,Number of students per school,edu_stu_secondary,,,
-Education,Number of students per school,edu_stu_hi_secondary,,,
-Education,Ratio of female teacher to male teacher,edu_ratio_teach(f:m)_primary,,,
-Education,Ratio of female teacher to male teacher,edu_ratio_teach(f:m)_low_secondary,,,
-Education,Ratio of female teacher to male teacher,edu_ratio_teach(f:m)_secondary,,,
-Education,Ratio of female teacher to male teacher,edu_ratio_teach(f:m)_high_secondary,,,
-Education,Number of schools per 1000 population,edu_school_per_1000_pop_primary,,,
-Education,Number of schools per 1000 population,edu_school_per_1000_pop_low_secondary,,,
-Education,Number of schools per 1000 population,edu_school_per_1000_pop_secondary,,,
-Education,Number of schools per 1000 population,edu_school_per_1000_pop_hi_secondary,,,
-Ecmonomic Status,Percentage of economically active population,eco_activity_per_econ_active_,,,
-Ecmonomic Status,Percentage of economically active population by sex,eco_activity_per_eco_active_m,,,
-Ecmonomic Status,Percentage of economically active population by sex,eco_activity_per_eco_active_f,,,
-Ecmonomic Status,"Percentage of usually economically active population, 2011",eco_activity_per_usual_eco_active,,,
-Ecmonomic Status,Percentage of usually economically active population by sex,eco_activity_m_per_usual_eco_active,,,
-Ecmonomic Status,Percentage of usually economically active population by sex,eco_activity_f_per_usual_eco_active,,,
-Ecmonomic Status,Percentage of usually employed population,eco_activity_per_usually_emp,,,
-Ecmonomic Status,Percentage of usually employed population by sex,eco_activity_m_per_usually_emp,,,
-Ecmonomic Status,Percentage of usually employed population by sex,eco_activity_f_per_usually_emp,,,
-Ecmonomic Status,Percentage of usually unemployed population,eco_activity_per_usually_unemp,,,
-Ecmonomic Status,Percentage of usually unemployed population by sex,eco_activity_m_per_usually_unemp,,,
-Ecmonomic Status,Percentage of usually unemployed population by sex,eco_activity_f_per_usually_unemp,,,
-Ecmonomic Status,Percentage of usually economically active population by occupation,eco_activity_per-armed_force,,,
-Ecmonomic Status,Percentage of usually economically active population by occupation,eco_activity_per_managers,,,
-Ecmonomic Status,Percentage of usually economically active population by occupation,eco_activity_per_proffesionals,,,
-Ecmonomic Status,Percentage of usually economically active population by occupation,eco_activity_per_technician,,,
-Ecmonomic Status,Percentage of usually economically active population by occupation,eco_activity_per_offic_assistant,,,
-Ecmonomic Status,Percentage of usually economically active population by occupation,eco_activity_per_sale_worker,,,
-Ecmonomic Status,Percentage of usually economically active population by occupation,eco_activity_per_agriculture,,,
-Ecmonomic Status,Percentage of usually economically active population by occupation,eco_activity_per_crafter,,,
-Ecmonomic Status,Percentage of usually economically active population by occupation,eco_activity_per_machiene_operator,,,
-Ecmonomic Status,Percentage of usually economically active population by occupation,eco_activity_per_ele_occupation,,,
-Gender,Percentage of households with female ownership on land,gen_aspect_per_household,,,
-Gender,Percentage of households with female ownership on fixed assets,gen_aspect_per_fem_own_asset,,,
-Gender,Percentage of household head by sex,gen_aspect_per_male_head,,,
-Gender,Percentage of household head by sex,gen_aspect_per_female_head,,,
-Gender,Percentage of female teachers in all levels of schools,gen_aspect_per_female_teacher,,,
-Gender,Percentage of female teachers in primary schools,gen_aspect_per_female_teacher_primary,,,
-Household,Number of housing units,house_char_no_housing_unit,,,
-Household,Number of households,house_char_no_household,,,
-Household,Average household size,house_char_avg_household_size,,,
-Household,Households per housing units,house_char_hou_per_housing,,,
-Household,Percentage of household by ownership type of house,house_char_per_house_owned,,,
-Household,Percentage of household by ownership type of house,house_char_per_house_non_owned,,,
-Household,Percentage of households by type of house foundation,house_char_per_house_mud,,,
-Household,Percentage of households by type of house foundation,house_char_per_house_cement,,,
-Household,Percentage of households by type of house foundation,house_char_per_house_rcc,,,
-Household,Percentage of households by type of house foundation,house_char_per_house_wood,,,
-Household,Percentage of households by type of house walls,house_char_per_mud-house,,,
-Household,Percentage of households by type of house walls,house_char_per_cement_house,,,
-Household,Percentage of households by type of house walls,house_char_per_wood_house,,,
-Household,Percentage of households by type of house walls,house_char_per_bamboo_house,,,
-Household,Percentage of households by type of house walls,house_char_per_unbacked_brick,,,
-Household,Percentage of households by type of house roof,house_char_per_thatch_roof,,,
-Household,Percentage of households by type of house roof,house_char_per_iron_roof,,,
-Household,Percentage of households by type of house roof,house_char_per_tile_roof,,,
-Household,Percentage of households by type of house roof,house_char_per_rcc_roof,,,
-Household,Percentage of households by type of house roof,house_char_per_wood_roof,,,
-Household,Percentage of households by type of house roof,house_char_per_mud_roof,,,
-Household,Percentage of households by type of household amenities,house_char_per_radio_house,,,
-Household,Percentage of households by type of household amenities,house_char_per_tv_house,,,
-Household,Percentage of households by type of household amenities,house_char_per_cable_house,,,
-Household,Percentage of households by type of household amenities,house_char_per_computer_house,,,
-Household,Percentage of households by type of household amenities,house_char_per_internet_house,,,
-Household,Percentage of households by type of household amenities,house_char_per_telephone_house,,,
-Household,Percentage of households by type of household amenities,house_char_per_mobile_house,,,
-"Environment, Sanitation and Health",Percentage of households by type of facilities,env_sani_health_per_without_toilet,,,
-"Environment, Sanitation and Health",Percentage of households by type of facilities,env_sani_health_per_flush_toilet,,,
-"Environment, Sanitation and Health",Percentage of households by type of facilities,env_sani_health_per_with_septictank_toilet,,,
-"Environment, Sanitation and Health",Percentage of households by type of facilities,env_sani_health_per_ordinary_toilet,,,
-"Environment, Sanitation and Health",Percentage of households by sources of drinking water,env_sani_health_per_tap_house,,,
-"Environment, Sanitation and Health",Percentage of households by sources of drinking water,env_sani_health_per_tubewell_house,,,
-"Environment, Sanitation and Health",Percentage of households by sources of drinking water,env_sani_health_per_covered_well_house,,,
-"Environment, Sanitation and Health",Percentage of households by sources of drinking water,env_sani_health_per_uncovered_well_house,,,
-"Environment, Sanitation and Health",Percentage of households by sources of drinking water,env_sani_health_per_spout_house,,,
-"Environment, Sanitation and Health",Percentage of households by sources of drinking water,env_sani_health_per_river_house,,,
-"Environment, Sanitation and Health",Percentage of households by type of cooking fuel,env_sani_health_per_firewood_house,,,
-"Environment, Sanitation and Health",Percentage of households by type of cooking fuel,env_sani_health_per_kerosene_house,,,
-"Environment, Sanitation and Health",Percentage of households by type of cooking fuel,env_sani_health_per_gas_house,,,
-"Environment, Sanitation and Health",Percentage of households by type of cooking fuel,env_sani_health_per_dung_house,,,
-"Environment, Sanitation and Health",Percentage of households by type of cooking fuel,env_sani_health_per_biogas_house,,,
-"Environment, Sanitation and Health",Percentage of households by type of cooking fuel,env_sani_health_per_electricity_house,,,
-"Environment, Sanitation and Health",Percentage of households by sources of lighting energy,env_sani_health_per_elect_house,,,
-"Environment, Sanitation and Health",Percentage of households by sources of lighting energy,env_sani_health_per_ksene_house,,,
-"Environment, Sanitation and Health",Percentage of households by sources of lighting energy,env_sani_health_per_bgas_house,,,
-"Environment, Sanitation and Health",Percentage of households by sources of lighting energy,env_sani_health_per_solar_house,,,
-"Environment, Sanitation and Health",Total health institutions,env_sani_health_tot_health_inst,,,
-"Environment, Sanitation and Health",Population per health institution,env_sani_health_pop_per_health_inst,,,
-Agriculture,Percentage distribution of agriculture holdings,agriculture_agri_holding,,,
-Agriculture,Percentage distribution of agriculture holding area,agriculture_agri_holding_area,,,
-Agriculture,Average agricultural holding size,agriculture_ave_agri_holding_area,,,
-Agriculture,Percentage of agricultural holdings area by land use,agriculture_per_agri_holding_area_agri,,,
-Agriculture,Percentage of agricultural holdings area by land use,agriculture_per_agri_holding_area_pond,,,
-Agriculture,Percentage of agricultural holdings area by land use,agriculture_per_agri_holding_area_other,,,
-Agriculture,Percentage of holdings area under one tenure form by type of tenure (owned vs. non-owned),agriculture_per_owned_area,,,
-Agriculture,Percentage of holdings area under one tenure form by type of tenure (owned vs. non-owned),agriculture_per_non_owned_area,,,
-Agriculture,Percentage of agricultural holder by sex,agriculture_per_agri_holding_m,,,
-Agriculture,Percentage of agricultural holder by sex,agriculture_per_agri_holding_f,,,
-Agriculture,Percentage of irrigated land area,agriculture_per_irri_area,,,
-Agriculture,Percentage of soil degradation on agricultural holdings area,agriculture_per_soil_degrade,,,
-Agriculture,Percentage of agricultural holdings reporting insufficiency of their agricultural product in household consumption,agriculture_per_insufficiency_agri_product,,,
-Agriculture,"Percentage of agricultural holdings reporting insufficiency of their agricultural product in household consumption,by period of insufficiency",agriculture_per_1-3month,,,
-Agriculture,"Percentage of agricultural holdings reporting insufficiency of their agricultural product in household consumption,by period of insufficiency",agriculture_per_4-6month,,,Distribution of fowls
-Agriculture,"Percentage of agricultural holdings reporting insufficiency of their agricultural product in household consumption,by period of insufficiency",agriculture_per_7-9month,,,
-Agriculture,"Percentage of agricultural holdings reporting insufficiency of their agricultural product in household consumption,by period of insufficiency",agriculture_per_10-12month,,,
-Agriculture,Percentage of agricultural holdings having agricultural credit,agriculture_per_agri_credit,,,
-Agriculture,Percentage distribution of farm population as of total population,agriculture_per_farm_pop,,,
-Agriculture,Distribution of livestock,agriculture_no_cattle,,,
-Agriculture,Distribution of livestock,agriculture_no_buffalo,,,
-Agriculture,Distribution of livestock,agriculture_no_goat,,,
-Agriculture,Distribution of livestock,agriculture_no_sheep,,,
-Agriculture,Distribution of fowls,agriculture_no_chicken,,,
-Agriculture,Distribution of fowls,agriculture_no_duck,,,
-Agriculture,Distribution of fowls,agriculture_no_pigeon,,,
-Agriculture,Distribution of fowls,agriculture_no_other,,,
-Agriculture,Distribution of major fruit trees,agriculture_no_orange,,,
-Agriculture,Distribution of major fruit trees,agriculture_no_junar,,,
-Agriculture,Distribution of major fruit trees,agriculture_no_lemon,,,
-Agriculture,Distribution of major fruit trees,agriculture_no_lime,,,
-Agriculture,Distribution of major fruit trees,agriculture_no_citrus,,,
-Agriculture,Distribution of major fruit trees,agriculture_no_mango,,,
-Agriculture,Distribution of major fruit trees,agriculture_no_banana,,,
-Agriculture,Distribution of major fruit trees,agriculture_no_jackfruit,,,
-Agriculture,Distribution of major fruit trees,agriculture_no_apple,,,
-Agriculture,Distribution of major fruit trees,agriculture_no_pear,,,
-Agriculture,Distribution of major fruit trees,agriculture_no_peach,,,
-Agriculture,Distribution of major fruit trees,agriculture_no_lychee,,,
-Agriculture,Distribution of major fruit trees,agriculture_per_nearby,,,
-Agriculture,Percentage of holdings with the access of agricultural markets by travelling time,agriculture_per_10-30min,,,
-Agriculture,Percentage of holdings with the access of agricultural markets by travelling time,agriculture_per_30-60min,,,
-Agriculture,Percentage of holdings with the access of agricultural markets by travelling time,agriculture_per_1-2hr,,,
-Agriculture,Percentage of holdings with the access of agricultural markets by travelling time,agriculture_per_2-3hr,,,
-Agriculture,Percentage of holdings with the access of agricultural markets by travelling time,agriculture_per_>3hr,,,
-Agriculture,Ratio of agriculture holdings to total number of households,agriculture_rat_agrihold,,,
-Manufacturing Esctablishments,Distribution of manufacturing establishment,manufact_est_no_establish,,,
-Manufacturing Esctablishments,Distribution of manufacturing establishment by legal status,manufact_est_no_indv,,,
-Manufacturing Esctablishments,Distribution of manufacturing establishment by legal status,manufact_est_no_partner,,,
-Manufacturing Esctablishments,Distribution of manufacturing establishment by legal status,manufact_est_no_pvt_ltd,,,
-Manufacturing Esctablishments,Distribution of manufacturing establishment by legal status,manufact_est_no_other,,,
-Manufacturing Esctablishments,Distribution of manufacturing establishment by the type of ownership,manufact_est_no_pvt,,,
-Manufacturing Esctablishments,Distribution of manufacturing establishment by the type of ownership,manufact_est_no_gov,,,
-Manufacturing Esctablishments,Distribution of manufacturing establishment by the type of ownership,manufact_est_no_othr,,,
-Manufacturing Esctablishments,Distribution of manufacturing establishment by the number of persons engaged,manufact_est_10-19_person,,,
-Manufacturing Esctablishments,Distribution of manufacturing establishment by the number of persons engaged,manufact_est_20-99_person,,,
-Manufacturing Esctablishments,Distribution of manufacturing establishment by the number of persons engaged,manufact_est_100-199_person,,,
-Manufacturing Esctablishments,Distribution of manufacturing establishment by the number of persons engaged,manufact_est_200more_person,,,
-Manufacturing Esctablishments,Distribution of manufacturing establishment by the amount of fixed assets,manufact_est_more_than_50million,,,
-Manufacturing Esctablishments,Distribution of manufacturing establishment by the amount of fixed assets,manufact_est_10-50_million,,,
-Manufacturing Esctablishments,Distribution of manufacturing establishment by the amount of fixed assets,manufact_est_less_than_10million,,,
-Manufacturing Esctablishments,Percent distribution of total value added,manufact_est_per_tot_val_added,,,
-Manufacturing Esctablishments,Percentage of female employee,manufact_est_per_fem_employ,,,
-Development Indicators,Human development index,develop_indicate_hdi,,,
-Development Indicators,Labour productivity,develop_indicate_lab_product,,,
-Development Indicators,Human Poverty index,develop_indicate_hpi,,,
-Development Indicators,Life expectancy at birth,develop_indicate_life_expect,,,
-Development Indicators,Percentage of people with safe drinking water,develop_indicate_per_safe_dwater,,,
-Development Indicators,GNI per capita based on purchasing power parity (PPP),develop_indicate_gni_per_ppp,,,
-Development Indicators,Gross value added at basic price (in million),develop_indicate_gross_val_added(in_million),,,
-Development Indicators,Government budget expenditure status,develop_indicate_recurrent(in_thousands),,,
-Development Indicators,Government budget expenditure status,develop_indicate_capital(in_thousands),,,
-Development Indicators,Government budget expenditure status,develop_indicate_expenditure(in_thousands),,,
-Development Indicators,Poverty head count ratio,develop_indicate_rat_poverty_head,,,
-Development Indicators,Poverty gap,develop_indicate_pov_gap,,,
-Development Indicators,Squared poverty gap,develop_indicate_sqrd_pov_gap,,,
-Trends and Projections,Percent change in population (1981-1991),trend_project_1981-1991,,,
-Trends and Projections,Percent change in population (1991-2001),trend_project_1991-2001,,,
-Trends and Projections,Percent change in population (2001-2011),trend_project_2001-2011,,,
-Trends and Projections,Population density (1981),trend_project_1981,,,
-Trends and Projections,Population density (1991),trend_project_1991,,,
-Trends and Projections,Population density (2001),trend_project_2001,,,
-Trends and Projections,Population density (2011),trend_project_2011,,,
-Trends and Projections,Average household size (1981),trend_project_av_1981,,,
-Trends and Projections,Average household size (1991),trend_project_av_1991,,,
-Trends and Projections,Average household size (2001),trend_project_av_2001,,,
-Trends and Projections,Average household size (2011),trend_project_av_2011,,,
-Trends and Projections,Average annual population growth rate (1971-1981),trend_project_1971-1981,,,
-Trends and Projections,Average annual population growth rate (1981-1991),trend_project_1981-1991,,,
-Trends and Projections,Average annual population growth rate (1991-2001),trend_project_1991-2001,,,
-Trends and Projections,Average annual population growth rate (2001-2011),trend_project_2001-2011,,,
-Trends and Projections,Sex ratio (1981),trend_project_sx_1981,,,
-Trends and Projections,Sex ratio (1991),trend_project_sx_1991,,,
-Trends and Projections,Sex ratio (2001),trend_project_sx_2001,,,
-Trends and Projections,Sex ratio (2011),trend_project_sx_2011,,,
-Trends and Projections,Child woman ratio (1981),trend_project_cwr_1981,,,
-Trends and Projections,Child woman ratio (1991),trend_project_cwr_1991,,,
-Trends and Projections,Child woman ratio (2001),trend_project_cwr_2001,,,
-Trends and Projections,Child woman ratio (2011),trend_project_cwr_2011,,,
-Trends and Projections,Total dependency ratio (1991),trend_project_tdr_1991,,,
-Trends and Projections,Total dependency ratio (2001),trend_project_tdr_2001,,,
-Trends and Projections,Total dependency ratio (2011),trend_project_tdr_2011,,,
-Trends and Projections,Child dependency ratio (1981),trend_project_cdr_1981,,,
-Trends and Projections,Child dependency ratio (1991),trend_project_cdr_1991,,,
-Trends and Projections,Child dependency ratio (2001),trend_project_cdr_2001,,,
-Trends and Projections,Child dependency ratio (2011),trend_project_cdr_2011,,,
-Trends and Projections,Aged dependency ratio (1981),trend_project_adr_1981,,,
-Trends and Projections,Aged dependency ratio (1991),trend_project_adr_1991,,,
-Trends and Projections,Aged dependency ratio (2001),trend_project_adr_2001,,,
-Trends and Projections,Aged dependency ratio (2011),trend_project_adr_2011,,,
-Trends and Projections,Percentage of economically active population (1981),trend_project_per-eco_active_1981,,,
-Trends and Projections,Percentage of economically active population (1991),trend_project_per-eco_active_1991,,,
-Trends and Projections,Percentage of economically active population (2001),trend_project_per-eco_active_2001,,,
-Trends and Projections,Percentage of economically active population (2011),trend_project_per-eco_active_2011,,,
-Trends and Projections,Student teacher ratio (1981),trend_project_ratio_st_teach_1981,,,
-Trends and Projections,Student teacher ratio (1991),trend_project_ratio_st_teach_1991,,,
-Trends and Projections,Student teacher ratio (2001),trend_project_ratio_st_teach_2001,,,
-Trends and Projections,Student teacher ratio (2011),trend_project_ratio_st_teach_2011,,,
-Trends and Projections,Literacy rate (1981),trend_project_lr_1981,,,
-Trends and Projections,Literacy rate (1991),trend_project_lr_1991,,,
-Trends and Projections,Literacy rate (2001),trend_project_lr_2001,,,
-Trends and Projections,Literacy rate (2011),trend_project_lr_2011,,,
-Trends and Projections,Male singulate mean age at marriage (1981),trend_project_mean_age_male_1981,,,
-Trends and Projections,Male singulate mean age at marriage (1991),trend_project_mean_age_male_1991,,,
-Trends and Projections,Male singulate mean age at marriage (2001),trend_project_mean_age_male_2001,,,
-Trends and Projections,Male singulate mean age at marriage (2011),trend_project_mean_age_male_2011,,,
-Trends and Projections,Female singulate mean age at marriage (1981),trend_project_mean_age_female_1981,,,
-Trends and Projections,Female singulate mean age at marriage (1991),trend_project_mean_age_female_1991,,,
-Trends and Projections,Female singulate mean age at marriage (2001),trend_project_mean_age_female_2001,,,
-Trends and Projections,Female singulate mean age at marriage (2011),trend_project_mean_age_female_2011,,,
-Trends and Projections,Population projection (2016),trend_project_pop_project_2016,,,
-Trends and Projections,Population projection (2021),trend_project_pop_project_2021,,,
-Trends and Projections,Population projection (2026),trend_project_pop_project_2026,,,
-Trends and Projections,Population projection (2031),trend_project_pop_project_2031,,,
+﻿Category,view_name,actual_name
+Population,Total Population,pop_dyna_pop
+Population,Percentage change in population,pop_dyna_per_pop_chng
+Population,Percentage change in population(1981-1991),pop_dyna_1981-1991
+Population,Percentage change in population(1991-2001),pop_dyna_1991-2001
+Population,Population density (per sq.km),pop_dyna_pop_den
+Population,Singulate mean age at marriage,pop_dyna_sin_mean_mdg
+Population,Singulate mean age at marriage by sex(male),pop_dyna_sin_mdg_m
+Population,Singulate mean age at marriage by sex(female),pop_dyna_sin_mdg_f
+Population,Mean age at first marriage,pop_dyna_mn_fst_age
+Population,Mean age at first marriage - male,pop_dyna_mn_fst_m
+Population,Mean age at first marriage - female,pop_dyna_mn_fst_f
+Population,Mean age at child bearing,pop_dyna_mn_age-cb
+Population,Crude birth rate,pop_dyna_cbr
+Population,Crude death rate,pop_dyna_cdr
+Population,Infant mortality rate,pop_dyna_imr
+Population,Infant mortality rate - male,pop_dyna_m_imr
+Population,Infant mortality rate - female,pop_dyna_f_imr
+Population,Under 5 mortality rate,pop_dyna_u5mr
+Population,Under 5 mortality rate - male,pop_dyna_m_u5mr
+Population,Under 5 mortality rate - female,pop_dyna_f_u5mr
+Population,Index of ageing,pop_dyna_ind_agn
+Population,Index of ageing - male,pop_dyna_m_idn_agn
+Population,Index of ageing - female,pop_dyna_f_idn_agn
+Population,Sex ratio at birth,pop_char_sr_birth
+Population,Sex ratio,pop_char_sr
+Population,Child woman ratio,pop_char_cwr
+Population,Total dependency ratio,pop_char_t_dr
+Population,Child dependency ratio,pop_char_ch_dr
+Population,Child dependency ratio - male,pop_char_m_ch_dr
+Population,Child dependency ratio - female,pop_char_f_ch_dr
+Population,Aged dependency ratio,pop_char_aged_dr
+Population,Percentage of population aged 75 years and above,pop_char_per-pop_75abv
+Population,Percentage of population aged 75 years and above - male,pop_char_m_per-pop_75abv
+Population,Percentage of population aged 75 years and above female,pop_char_f_per-pop_75abv
+Population,Distribution of absentee population,pop_char_dis_abs_pop
+Population,Percentage of absentee population,pop_char_per_abs_pop
+Population,Percentage of population with disability,pop_char_per_disab_pop
+Population,Percentage of population by type of disability(physically),pop_char_per-disab_pop_physically
+Population,Percentage of population by type of disability(mentally),pop_char_per_disab_pop_mentally
+Population,Percentage of child marriage,pop_char_per-child_mdg
+Population,Percentage of widowed population - female,pop_char_per_widow_pop
+Population,Percentage of widowed population - male,pop_char_per_widower_pop
+Population,Percentage of divorced or separated population,pop_char_per_divorced_pop
+Population,Predominant caste,pop_char_domt_caste
+Population,Population by caste / ethnicity(chhetree),pop_char_chhetree
+Population,Population by caste / ethnicity(brahman-hill),pop_char_brahman-hill
+Population,Population by caste / ethnicity(magar),pop_char_magar
+Population,Population by caste / ethnicity(tharu),pop_char_tharu
+Population,Population by caste / ethnicity(tamang),pop_char_tamang
+Population,Population by caste / ethnicity(newar),pop_char_newar
+Population,Population by caste / ethnicity(kami),pop_char_kami
+Population,Population by caste / ethnicity(musalman),pop_char_musalman
+Population,Population by caste / ethnicity(yadav),pop_char_yadav
+Population,Population by caste / ethnicity(rai),pop_char_rai
+Population,Population by caste / ethnicity(gurung),pop_char_gurung
+Population,Population by caste / ethnicity(damai/dholi),pop_char_damai/dholi
+Population,Population by caste / ethnicity(thakuri),pop_char_thakuri
+Population,Population by caste / ethnicity(limbu),pop_char_limbu
+Population,Population by caste / ethnicity(sarki),pop_char_sarki
+Population,Population by caste / ethnicity(teli),pop_char_teli
+Population,Population by mother tongue(nepali),pop_char_nepali
+Population,Population by mother tongue(maithali),pop_char_maithili
+Population,Population by mother tongue(bhojpuri),pop_char_bhojpuri
+Population,Population by mother tongue(tharu),pop_char_tharu
+Population,Population by mother tongue(tamang),pop_char_tamang
+Population,Population by mother tongue(newar),pop_char_newar
+Population,Population by mother tongue(bajjika),pop_char_bajjika
+Population,Population by mother tongue(magar),pop_char_magar
+Population,Population by mother tongue(doteli),pop_char_doteli
+Population,Population by mother tongue(urdu),pop_char_urdu
+Population,Population by mother tongue(avadhi),pop_char_avadhi
+Population,Population by mother tongue(limbu),pop_char_limbu
+Population,Population by mother tongue(gurung),pop_char_gurung
+Population,Population by mother tongue(baitadeli),pop_char_baitadeli
+Population,Population by mother tongue(rai),pop_char_rai
+Population,Population by mother tongue(achhami),pop_char_achhami
+Education,Literacy rate,edu_lit_rate
+Education,Literacy rate - male,edu_m_lit_rate
+Education,Literacy rate - female,edu_f_lit_rate
+Education,Adult literacy rate,edu_ad_lit_rate
+Education,Adult literacy rate - male,edu_m-ad_lit_rate
+Education,Adult literacy rate - female,edu_f_ad_lit_rate
+Education,Ratio of literate male to female,edu_lit_ratio(m:f)
+Education,Ratio of adult male to female literate population,edu_ad_lit_ratio(m:f)
+Education,Total literate population,edu_tot_lit_pop
+Education,Percentage of literate population by education level beginer,edu_per_beginer
+Education,Percentage of literate population by education level primary,edu_per_primary
+Education,Percentage of literate population by education level lower secondary,edu_per_low_secondary
+Education,Percentage of literate population by education level secondary,edu_per_secondary
+Education,Percentage of literate population by education level slc,edu_per_slc
+Education,Percentage of literate population by education level inter,edu_per_inter
+Education,Percentage of literate population by education level graduate,edu_per_graduate
+Education,Percentage of literate population by education level post graduate,edu_per_post_graduate
+Education,Percentage of literate population by education level others,edu_per-others
+Education,Percentage of literate population by education level non formal,edu_per_non_formal
+Education,Percentage of literate population by education level not stated,edu_per_not_stated
+Education,School teacher ratio in school level of education primary,edu_stu_tch_ratio_primary
+Education,School teacher ratio in school level of education lower secondary,edu_stu_tch_ratio_l_secondary
+Education,School teacher ratio in school level of education secondary,edu_stu_tch_ratio_secondary
+Education,School teacher ratio in school level of education higher secondary,edu_stu_tch_ratio_hi_secondary
+Education,Number of students per primary school primary,edu_stu_primary
+Education,Number of students per lower secondary  school,edu_stu_low_secondary
+Education,Number of students per secondary school,edu_stu_secondary
+Education,Number of students per higher secondary school,edu_stu_hi_secondary
+Education,Ratio of female teacher to male teacher - primary,edu_ratio_teach(f:m)_primary
+Education,Ratio of female teacher to male teacher - lower secondary,edu_ratio_teach(f:m)_low_secondary
+Education,Ratio of female teacher to male teacher secondary,edu_ratio_teach(f:m)_secondary
+Education,Ratio of female teacher to male teacher - higher secondary,edu_ratio_teach(f:m)_high_secondary
+Education,Number of schools per 1000 population - primary,edu_school_per_1000_pop_primary
+Education,Number of schools per 1000 population - lower secondary,edu_school_per_1000_pop_low_secondary
+Education,Number of schools per 1000 population - secondary,edu_school_per_1000_pop_secondary
+Education,Number of schools per 1000 population - higher secondary,edu_school_per_1000_pop_hi_secondary
+Ecmonomic Status,Percentage of economically active population,eco_activity_per_econ_active_
+Ecmonomic Status,Percentage of economically active population - male,eco_activity_per_eco_active_m
+Ecmonomic Status,Percentage of economically active population - female,eco_activity_per_eco_active_f
+Ecmonomic Status,Percentage of usually economically active population,eco_activity_per_usual_eco_active
+Ecmonomic Status,Percentage of usually economically active population - male,eco_activity_m_per_usual_eco_active
+Ecmonomic Status,Percentage of usually economically active population - female,eco_activity_f_per_usual_eco_active
+Ecmonomic Status,Percentage of usually employed population,eco_activity_per_usually_emp
+Ecmonomic Status,Percentage of usually employed population - male,eco_activity_m_per_usually_emp
+Ecmonomic Status,Percentage of usually employed population - female,eco_activity_f_per_usually_emp
+Ecmonomic Status,Percentage of usually unemployed population,eco_activity_per_usually_unemp
+Ecmonomic Status,Percentage of usually unemployed population - male,eco_activity_m_per_usually_unemp
+Ecmonomic Status,Percentage of usually unemployed population - female,eco_activity_f_per_usually_unemp
+Ecmonomic Status,Percentage of usually economically active population by occupation - armed force,eco_activity_per-armed_force
+Ecmonomic Status,Percentage of usually economically active population by occupation - managers,eco_activity_per_managers
+Ecmonomic Status,Percentage of usually economically active population by occupation - proffesionals,eco_activity_per_proffesionals
+Ecmonomic Status,Percentage of usually economically active population by occupation - technician,eco_activity_per_technician
+Ecmonomic Status,Percentage of usually economically active population by occupation - office assistant,eco_activity_per_offic_assistant
+Ecmonomic Status,Percentage of usually economically active population by occupation - sale worker,eco_activity_per_sale_worker
+Ecmonomic Status,Percentage of usually economically active population by occupation - agriculture,eco_activity_per_agriculture
+Ecmonomic Status,Percentage of usually economically active population by occupation - crafter,eco_activity_per_crafter
+Ecmonomic Status,Percentage of usually economically active population by occupation - machiene operator,eco_activity_per_machiene_operator
+Ecmonomic Status,Percentage of usually economically active population by occupation - else,eco_activity_per_ele_occupation
+Gender,Percentage of households with female ownership on land,gen_aspect_per_household
+Gender,Percentage of households with female ownership on fixed assets,gen_aspect_per_fem_own_asset
+Gender,Percentage of household head - male,gen_aspect_per_male_head
+Gender,Percentage of household head - female,gen_aspect_per_female_head
+Gender,Percentage of female teachers in all levels of schools,gen_aspect_per_female_teacher
+Gender,Percentage of female teachers in primary schools,gen_aspect_per_female_teacher_primary
+Household,Number of housing units,house_char_no_housing_unit
+Household,Number of households,house_char_no_household
+Household,Average household size,house_char_avg_household_size
+Household,Households per housing units,house_char_hou_per_housing
+Household,Percentage of household by ownership type of house - owned,house_char_per_house_owned
+Household,Percentage of household by ownership type of house - non owned,house_char_per_house_non_owned
+Household,Percentage of households by type of house foundation - mud,house_char_per_house_mud
+Household,Percentage of households by type of house foundation-cement,house_char_per_house_cement
+Household,Percentage of households by type of house foundation - rcc,house_char_per_house_rcc
+Household,Percentage of households by type of house foundation-wood,house_char_per_house_wood
+Household,Percentage of households by type of house walls - house,house_char_per_mud-house
+Household,Percentage of households by type of house walls - cement,house_char_per_cement_house
+Household,Percentage of households by type of house walls - wood,house_char_per_wood_house
+Household,Percentage of households by type of house walls - bamboo,house_char_per_bamboo_house
+Household,Percentage of households by type of house walls unbacked brick,house_char_per_unbacked_brick
+Household,Percentage of households by type of house roof - thatch,house_char_per_thatch_roof
+Household,Percentage of households by type of house roof - iron,house_char_per_iron_roof
+Household,Percentage of households by type of house roof - tile,house_char_per_tile_roof
+Household,Percentage of households by type of house roof - rcc,house_char_per_rcc_roof
+Household,Percentage of households by type of house roof - wood,house_char_per_wood_roof
+Household,Percentage of households by type of house roof - mud,house_char_per_mud_roof
+Household,Percentage of households by type of household amenities - radio,house_char_per_radio_house
+Household,Percentage of households by type of household amenities - tv,house_char_per_tv_house
+Household,Percentage of households by type of household amenities - cable,house_char_per_cable_house
+Household,Percentage of households by type of household amenities - computer,house_char_per_computer_house
+Household,Percentage of households by type of household amenities - internet,house_char_per_internet_house
+Household,Percentage of households by type of household amenities - telephone,house_char_per_telephone_house
+Household,Percentage of households by type of household amenities - mobile,house_char_per_mobile_house
+"Environment, Sanitation and Health",Percentage of households by type of facilities - without toilet,env_sani_health_per_without_toilet
+"Environment, Sanitation and Health",Percentage of households by type of facilities - flush toilet,env_sani_health_per_flush_toilet
+"Environment, Sanitation and Health",Percentage of households by type of facilities - septictank toilet,env_sani_health_per_with_septictank_toilet
+"Environment, Sanitation and Health",Percentage of households by type of facilities - ordinary toilet,env_sani_health_per_ordinary_toilet
+"Environment, Sanitation and Health",Percentage of households by sources of drinking water - tap,env_sani_health_per_tap_house
+"Environment, Sanitation and Health",Percentage of households by sources of drinking water - tubewell,env_sani_health_per_tubewell_house
+"Environment, Sanitation and Health",Percentage of households by sources of drinking water - covered well,env_sani_health_per_covered_well_house
+"Environment, Sanitation and Health",Percentage of households by sources of drinking water - uncovered well,env_sani_health_per_uncovered_well_house
+"Environment, Sanitation and Health",Percentage of households by sources of drinking water - spout,env_sani_health_per_spout_house
+"Environment, Sanitation and Health",Percentage of households by sources of drinking water - river,env_sani_health_per_river_house
+"Environment, Sanitation and Health",Percentage of households by type of cooking fuel - firewood,env_sani_health_per_firewood_house
+"Environment, Sanitation and Health",Percentage of households by type of cooking fuel - kerosene,env_sani_health_per_kerosene_house
+"Environment, Sanitation and Health",Percentage of households by type of cooking fuel - gas,env_sani_health_per_gas_house
+"Environment, Sanitation and Health",Percentage of households by type of cooking fuel - dung,env_sani_health_per_dung_house
+"Environment, Sanitation and Health",Percentage of households by type of cooking fuel - biogas,env_sani_health_per_biogas_house
+"Environment, Sanitation and Health",Percentage of households by type of cooking fuel - electricity,env_sani_health_per_electricity_house
+"Environment, Sanitation and Health",Percentage of households by sources of lighting energy - electricity,env_sani_health_per_elect_house
+"Environment, Sanitation and Health",Percentage of households by sources of lighting energy - kerosene,env_sani_health_per_ksene_house
+"Environment, Sanitation and Health",Percentage of households by sources of lighting energy - biogas,env_sani_health_per_bgas_house
+"Environment, Sanitation and Health",Percentage of households by sources of lighting energy - solar,env_sani_health_per_solar_house
+"Environment, Sanitation and Health",Total health institutions,env_sani_health_tot_health_inst
+"Environment, Sanitation and Health",Population per health institution,env_sani_health_pop_per_health_inst
+Agriculture,Percentage distribution of agriculture holdings,agriculture_agri_holding
+Agriculture,Percentage distribution of agriculture holding area,agriculture_agri_holding_area
+Agriculture,Average agricultural holding size,agriculture_ave_agri_holding_area
+Agriculture,Percentage of agricultural holdings area by land use - agriculture,agriculture_per_agri_holding_area_agri
+Agriculture,Percentage of agricultural holdings area by land use - pond,agriculture_per_agri_holding_area_pond
+Agriculture,Percentage of agricultural holdings area by land use - other,agriculture_per_agri_holding_area_other
+Agriculture,Percentage of holdings area under one tenure form by type of tenure (owned),agriculture_per_owned_area
+Agriculture,Percentage of holdings area under one tenure form by type of tenure (non-owned),agriculture_per_non_owned_area
+Agriculture,Percentage of agricultural holder - male,agriculture_per_agri_holding_m
+Agriculture,Percentage of agricultural holder - female,agriculture_per_agri_holding_f
+Agriculture,Percentage of irrigated land area,agriculture_per_irri_area
+Agriculture,Percentage of soil degradation on agricultural holdings area,agriculture_per_soil_degrade
+Agriculture,Percentage of agricultural holdings reporting insufficiency of their agricultural product in household consumption,agriculture_per_insufficiency_agri_product
+Agriculture,Percentage of agricultural holdings reporting insufficiency of their agricultural product in household consumption(1-3month),agriculture_per_1-3month
+Agriculture,Percentage of agricultural holdings reporting insufficiency of their agricultural product in household consumption(4-6month),agriculture_per_4-6month
+Agriculture,Percentage of agricultural holdings reporting insufficiency of their agricultural product in household consumption(7-9month),agriculture_per_7-9month
+Agriculture,Percentage of agricultural holdings reporting insufficiency of their agricultural product in household consumption(10-12month),agriculture_per_10-12month
+Agriculture,Percentage of agricultural holdings having agricultural credit,agriculture_per_agri_credit
+Agriculture,Percentage distribution of farm population as of total population,agriculture_per_farm_pop
+Agriculture,Distribution of livestock - cattle,agriculture_no_cattle
+Agriculture,Distribution of livestock - buffalo,agriculture_no_buffalo
+Agriculture,Distribution of livestock - goat,agriculture_no_goat
+Agriculture,Distribution of livestock - sheep,agriculture_no_sheep
+Agriculture,Distribution of fowls - chicken,agriculture_no_chicken
+Agriculture,Distribution of fowls - duck,agriculture_no_duck
+Agriculture,Distribution of fowls - pigeon,agriculture_no_pigeon
+Agriculture,Distribution of fowls - other,agriculture_no_other
+Agriculture,Distribution of major fruit trees - orange,agriculture_no_orange
+Agriculture,Distribution of major fruit trees - junar,agriculture_no_junar
+Agriculture,Distribution of major fruit  trees - lemon,agriculture_no_lemon
+Agriculture,Distribution of major fruit trees - lime,agriculture_no_lime
+Agriculture,Distribution of major fruit trees - citrus,agriculture_no_citrus
+Agriculture,Distribution of major fruit trees - mango,agriculture_no_mango
+Agriculture,Distribution of major fruit trees - banana,agriculture_no_banana
+Agriculture,Distribution of major fruit trees - jack fruit,agriculture_no_jackfruit
+Agriculture,Distribution of major fruit trees - apple,agriculture_no_apple
+Agriculture,Distribution of major fruit trees - pear,agriculture_no_pear
+Agriculture,Distribution of major fruit trees - peach,agriculture_no_peach
+Agriculture,Distribution of major fruit trees - lychee,agriculture_no_lychee
+Agriculture,Distribution of major fruit trees,agriculture_per_nearby
+Agriculture,Percentage of holdings with the access of agricultural markets by travelling time(10-30mins),agriculture_per_10-30min
+Agriculture,Percentage of holdings with the access of agricultural markets by travelling time(30-60mins),agriculture_per_30-60min
+Agriculture,Percentage of holdings with the access of agricultural markets by travelling time(1-2hrs),agriculture_per_1-2hr
+Agriculture,Percentage of holdings with the access of agricultural markets by travelling time(2-3hrs),agriculture_per_2-3hr
+Agriculture,Percentage of holdings with the access of agricultural markets by travelling time(>3hrs),agriculture_per_>3hr
+Agriculture,Ratio of agriculture holdings to total number of households,agriculture_rat_agrihold
+Manufacturing Esctablishments,Distribution of manufacturing establishment,manufact_est_no_establish
+Manufacturing Esctablishments,Distribution of manufacturing establishment by legal status - individual,manufact_est_no_indv
+Manufacturing Esctablishments,Distribution of manufacturing establishment by legal status - partner,manufact_est_no_partner
+Manufacturing Esctablishments,Distribution of manufacturing establishment by legal status - pvt. Ltd,manufact_est_no_pvt_ltd
+Manufacturing Esctablishments,Distribution of manufacturing establishment by legal status - other,manufact_est_no_other
+Manufacturing Esctablishments,Distribution of manufacturing establishment by the type of ownership - private,manufact_est_no_pvt
+Manufacturing Esctablishments,Distribution of manufacturing establishment by the type of ownership - government,manufact_est_no_gov
+Manufacturing Esctablishments,Distribution of manufacturing establishment by the type of ownership - other,manufact_est_no_othr
+Manufacturing Esctablishments,Distribution of manufacturing establishment by the number of persons engaged(10-19),manufact_est_10-19_person
+Manufacturing Esctablishments,Distribution of manufacturing establishment by the number of persons engaged(20-99),manufact_est_20-99_person
+Manufacturing Esctablishments,Distribution of manufacturing establishment by the number of persons engaged(100-199),manufact_est_100-199_person
+Manufacturing Esctablishments,Distribution of manufacturing establishment by the number of persons engaged(>200),manufact_est_200more_person
+Manufacturing Esctablishments,Distribution of manufacturing establishment by the amount of fixed assets(>50million),manufact_est_more_than_50million
+Manufacturing Esctablishments,Distribution of manufacturing establishment by the amount of fixed assets(10-50million),manufact_est_10-50_million
+Manufacturing Esctablishments,Distribution of manufacturing establishment by the amount of fixed assets(<10milloio),manufact_est_less_than_10million
+Manufacturing Esctablishments,Percent distribution of total value added,manufact_est_per_tot_val_added
+Manufacturing Esctablishments,Percentage of female employee,manufact_est_per_fem_employ
+Development Indicators,Human development index,develop_indicate_hdi
+Development Indicators,Labour productivity,develop_indicate_lab_product
+Development Indicators,Human Poverty index,develop_indicate_hpi
+Development Indicators,Life expectancy at birth,develop_indicate_life_expect
+Development Indicators,Percentage of people with safe drinking water,develop_indicate_per_safe_dwater
+Development Indicators,GNI per capita based on purchasing power parity (PPP),develop_indicate_gni_per_ppp
+Development Indicators,Gross value added at basic price (in million),develop_indicate_gross_val_added(in_million)
+Development Indicators,Government budget expenditure status - recurrent,develop_indicate_recurrent(in_thousands)
+Development Indicators,Government budget expenditure status - capital,develop_indicate_capital(in_thousands)
+Development Indicators,Government budget expenditure status - expenditure,develop_indicate_expenditure(in_thousands)
+Development Indicators,Poverty head count ratio,develop_indicate_rat_poverty_head
+Development Indicators,Poverty gap,develop_indicate_pov_gap
+Development Indicators,Squared poverty gap,develop_indicate_sqrd_pov_gap
+Trends and Projections,Percent change in population (1981-1991),trend_project_1981-1991
+Trends and Projections,Percent change in population (1991-2001),trend_project_1991-2001
+Trends and Projections,Percent change in population (2001-2011),trend_project_2001-2011
+Trends and Projections,Population density (1981),trend_project_1981
+Trends and Projections,Population density (1991),trend_project_1991
+Trends and Projections,Population density (2001),trend_project_2001
+Trends and Projections,Population density (2011),trend_project_2011
+Trends and Projections,Average household size (1981),trend_project_av_1981
+Trends and Projections,Average household size (1991),trend_project_av_1991
+Trends and Projections,Average household size (2001),trend_project_av_2001
+Trends and Projections,Average household size (2011),trend_project_av_2011
+Trends and Projections,Average annual population growth rate (1971-1981),trend_project_1971-1981
+Trends and Projections,Average annual population growth rate (1981-1991),trend_project_1981-1991
+Trends and Projections,Average annual population growth rate (1991-2001),trend_project_1991-2001
+Trends and Projections,Average annual population growth rate (2001-2011),trend_project_2001-2011
+Trends and Projections,Sex ratio (1981),trend_project_sx_1981
+Trends and Projections,Sex ratio (1991),trend_project_sx_1991
+Trends and Projections,Sex ratio (2001),trend_project_sx_2001
+Trends and Projections,Sex ratio (2011),trend_project_sx_2011
+Trends and Projections,Child woman ratio (1981),trend_project_cwr_1981
+Trends and Projections,Child woman ratio (1991),trend_project_cwr_1991
+Trends and Projections,Child woman ratio (2001),trend_project_cwr_2001
+Trends and Projections,Child woman ratio (2011),trend_project_cwr_2011
+Trends and Projections,Total dependency ratio (1991),trend_project_tdr_1991
+Trends and Projections,Total dependency ratio (2001),trend_project_tdr_2001
+Trends and Projections,Total dependency ratio (2011),trend_project_tdr_2011
+Trends and Projections,Child dependency ratio (1981),trend_project_cdr_1981
+Trends and Projections,Child dependency ratio (1991),trend_project_cdr_1991
+Trends and Projections,Child dependency ratio (2001),trend_project_cdr_2001
+Trends and Projections,Child dependency ratio (2011),trend_project_cdr_2011
+Trends and Projections,Aged dependency ratio (1981),trend_project_adr_1981
+Trends and Projections,Aged dependency ratio (1991),trend_project_adr_1991
+Trends and Projections,Aged dependency ratio (2001),trend_project_adr_2001
+Trends and Projections,Aged dependency ratio (2011),trend_project_adr_2011
+Trends and Projections,Percentage of economically active population (1981),trend_project_per-eco_active_1981
+Trends and Projections,Percentage of economically active population (1991),trend_project_per-eco_active_1991
+Trends and Projections,Percentage of economically active population (2001),trend_project_per-eco_active_2001
+Trends and Projections,Percentage of economically active population (2011),trend_project_per-eco_active_2011
+Trends and Projections,Student teacher ratio (1981),trend_project_ratio_st_teach_1981
+Trends and Projections,Student teacher ratio (1991),trend_project_ratio_st_teach_1991
+Trends and Projections,Student teacher ratio (2001),trend_project_ratio_st_teach_2001
+Trends and Projections,Student teacher ratio (2011),trend_project_ratio_st_teach_2011
+Trends and Projections,Literacy rate (1981),trend_project_lr_1981
+Trends and Projections,Literacy rate (1991),trend_project_lr_1991
+Trends and Projections,Literacy rate (2001),trend_project_lr_2001
+Trends and Projections,Literacy rate (2011),trend_project_lr_2011
+Trends and Projections,Male singulate mean age at marriage (1981),trend_project_mean_age_male_1981
+Trends and Projections,Male singulate mean age at marriage (1991),trend_project_mean_age_male_1991
+Trends and Projections,Male singulate mean age at marriage (2001),trend_project_mean_age_male_2001
+Trends and Projections,Male singulate mean age at marriage (2011),trend_project_mean_age_male_2011
+Trends and Projections,Female singulate mean age at marriage (1981),trend_project_mean_age_female_1981
+Trends and Projections,Female singulate mean age at marriage (1991),trend_project_mean_age_female_1991
+Trends and Projections,Female singulate mean age at marriage (2001),trend_project_mean_age_female_2001
+Trends and Projections,Female singulate mean age at marriage (2011),trend_project_mean_age_female_2011
+Trends and Projections,Population projection (2016),trend_project_pop_project_2016
+Trends and Projections,Population projection (2021),trend_project_pop_project_2021
+Trends and Projections,Population projection (2026),trend_project_pop_project_2026
+Trends and Projections,Population projection (2031),trend_project_pop_project_2031
