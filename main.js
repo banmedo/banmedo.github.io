@@ -286,6 +286,8 @@ app.createHelpers = function(){
 // initialize UI
 app.initUI = function(){
   app.map = L.map('map').setView([27, 84], 4);
+  app.map.attributionControl.addAttribution('Powered by &copy; <a href="http://naxa.com.np/", class="attrib">NAXA</a>');
+
   app.baseMap = L.tileLayer(app.BASELAYER);
   app.baseMap.addTo(app.map);
   app.buildGradientControl();
