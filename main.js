@@ -105,7 +105,7 @@ app.createHelpers = function(){
   }
   // function to get text based on field NAME
   app._getFieldLabel = function(fieldname){
-    return (app.labelObject[fieldname])?(app.labelObject[fieldname]+"<i> ("+fieldname+")</i>"):("<i>("+fieldname+")</i>");
+    return (app.labelObject[fieldname])?app.labelObject[fieldname]:("<i>("+fieldname+")</i>");
   }
 
   // build dropdown data control
