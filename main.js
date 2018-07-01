@@ -85,8 +85,8 @@ app.createHelpers = function(){
           onEachFeature: function(feature, layer){
             layer.on('click',app.showLayerData);
             layer.on('mouseover', function (e) {
-              this.bindPopup(app._getFieldLabel($("#dataDropdown").val())
-                          +":"+this.feature.properties.data);
+              this.bindPopup(feature.properties.DISTRICT+'<br>'+app._getFieldLabel($("#dataDropdown").val())
+                          +" : "+this.feature.properties.data);
               this.openPopup();
             });
             layer.on('mousemove', function (e) {
@@ -192,7 +192,7 @@ app.createHelpers = function(){
       var name = thislayer.feature.properties[app.GEOMNAMEFIELD];
       var data = app.dataObject[name][selectedIndex];
       try{
-        if (app.dataType != 'str') data = parseInt(data);
+        if (app.dataType != 'str') data = parseFloat(data);
         if (minData === undefined) minData = data;
         else if (data <= minData) minData = data;
         if (maxData === undefined) maxData = data;
@@ -269,6 +269,7 @@ app.createHelpers = function(){
     var map = $('#map');
     sidebar.css('margin-left', 0);
     map.css('width','75%');
+    setTimeout(function(){app.map.invalidateSize()},1000);
   }
   app.hideSidebar = function(){
     app.addSidebarControl();
@@ -277,6 +278,8 @@ app.createHelpers = function(){
     var width = sidebar.width();
     sidebar.css('margin-left', '-25%');
     map.css('width','100%');
+    app.map.invalidateSize();
+    setTimeout(function(){app.map.invalidateSize()},1000);
   }
 };
 
