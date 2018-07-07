@@ -70,7 +70,7 @@ app.createHelpers = function(){
     var html = '';
     var categories = Object.keys(data);
     for (var i = 0; i < categories.length;i++){
-      html += '<div class="collapsebtn-container" onClick=app.expandCategory(this) target="cat'+i+'"><b>'+categories[i]+'<a class="collapsebtn">+</a></b></div><ul class="fields cat'+i+' hidden">';
+      html += '<div class="collapsebtn-container" onClick=app.expandCategory(this) target="cat'+i+'">'+categories[i]+'<a class="collapsebtn">+</a></div><ul class="fields cat'+i+' hidden">';
       var subcat = data[categories[i]];
       var subcatKeys = Object.keys(subcat);
       for (var j = 0; j < subcatKeys.length;j++){
@@ -92,10 +92,11 @@ app.createHelpers = function(){
         var fields = subcat[subcatKeys[j]];
         if (fields.length == 1){
           conHtml += '<input class="dataField" type="radio" name="field" onclick=app.fromCategory(this) field="'+fields[0]+'">'+app._getFieldLabel(fields[0])+'<br>';
-          nosingle = false
+          noSingle = false
         }
       }
-      if (!noSingle) html += conhtml+'</ul></div>';
+      // console.log(noSingle, !noSingle);
+      if (! noSingle) html += conHtml+'</ul></div>';
       html += '</ul>';
     }
     $('.category-list').html(html);
