@@ -7,9 +7,11 @@ app.createConstants  = function(){
   app.NAMEINDEX = 1;
   app.HEADERLINE = 1;
   app.CATEGORYINDEX = 0;
-  app.LABELINDEX = 1;
-  app.FIELDINDEX = 2;
-  app.BASELAYER = 'https://api.mapbox.com/styles/v1/banmedo/cj5djv3ym0ij62sobk6h0s47b/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYmFubWVkbyIsImEiOiJhSklqeEZzIn0.rzfSxO3cVUhghA2sJN378A';
+  app.SUBCATINDEX = 1;
+  app.LABELINDEX = 2;
+  app.FIELDINDEX = 3;
+  // app.BASELAYER = 'https://api.mapbox.com/styles/v1/banmedo/cj5djv3ym0ij62sobk6h0s47b/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYmFubWVkbyIsImEiOiJhSklqeEZzIn0.rzfSxO3cVUhghA2sJN378A';
+  app.BASELAYER = 'https://api.mapbox.com/styles/v1/banmedo/cjbkm07iu27kp2sqzrxsyteiv/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYmFubWVkbyIsImEiOiJhSklqeEZzIn0.rzfSxO3cVUhghA2sJN378A';
   app.GEOMNAMEFIELD = 'DISTRICT';
   app.COLORS = [
     ['Yellow To Brown','#FFEDA0','#800026'],
@@ -45,14 +47,18 @@ app.createHelpers = function(){
         var labelArray = data.splice(app.HEADERLINE);
         // console.log(labelArray);
         app.labelObject = {};
+        app.shortLabelObject = {};
         app.categoryObject = {};
         for (var i=0; i<labelArray.length; i++){
           var category = labelArray[i][app.CATEGORYINDEX];
+          var subcategory = labelArray[i][app.SUBCATINDEX];
           var label = labelArray[i][app.LABELINDEX];
           var field = labelArray[i][app.FIELDINDEX];
-          app.labelObject[field.trim()] = label;
-          if (! app.categoryObject[category]) app.categoryObject[category] = [];
-          app.categoryObject[category].push(field);
+          app.labelObject[field.trim()] = (label == '')? subcategory:(subcategory+' - '+label);
+          app.shortLabelObject[field.trim()] = (label == '')? subcategory:label;
+          if (! app.categoryObject[category]) app.categoryObject[category] = {};
+          if (! app.categoryObject[category][subcategory]) app.categoryObject[category][subcategory] = [];
+          app.categoryObject[category][subcategory].push(field);
         }
         app.buildCategoryList(app.categoryObject);
         app.buildDropdownControl(app.headers);
@@ -64,11 +70,32 @@ app.createHelpers = function(){
     var html = '';
     var categories = Object.keys(data);
     for (var i = 0; i < categories.length;i++){
-      html += '<div class="collapsebtn-container" onClick=app.expandCategory(this) target="cat'+i+'">'+categories[i]+'<a class="collapsebtn">+</a></div><ul class="fields cat'+i+' hidden">';
-      var fields = data[categories[i]];
-      for (var j = 0; j < fields.length;j++){
-        html += '<li class="dataField" field="'+fields[j]+'" onclick=app.fromCategory(this)>'+app._getFieldLabel(fields[j])+'</li>';
+      html += '<div class="collapsebtn-container" onClick=app.expandCategory(this) target="cat'+i+'"><b>'+categories[i]+'<a class="collapsebtn">+</a></b></div><ul class="fields cat'+i+' hidden">';
+      var subcat = data[categories[i]];
+      var subcatKeys = Object.keys(subcat);
+      for (var j = 0; j < subcatKeys.length;j++){
+        var fields = subcat[subcatKeys[j]];
+        if (fields.length == 1){
+          // html += '<input class="dataField" type="radio" name="field" onclick=app.fromCategory(this) field="'+fields[0]+'">'+app._getFieldLabel(fields[0])+'<br>';
+          continue;
+        }
+        html += '<div class="collapsebtn-container" onClick=app.expandCategory(this) target="cat'+i+'subcat'+j+'"><b>'+subcatKeys[j]+'<a class="collapsebtn">+</a></b></div><ul class="fields cat'+i+'subcat'+j+' hidden">';
+        for (var k = 0; k < fields.length;k++){
+          html += '<input class="dataField" type="radio" name="field" onclick=app.fromCategory(this) field="'+fields[k]+'">'+app._getFieldLabel(fields[k], true)+'<br>';
+          // html += '<li class="dataField" field="'+fields[k]+'" onclick=app.fromCategory(this)>'+app._getFieldLabel(fields[k])+'</li>';
+        }
+        html += '</ul></div>';
       }
+      var noSingle = true;
+      var conHtml = '<div class="collapsebtn-container" onClick=app.expandCategory(this) target="cat'+i+'subcatothers"><b>Others<a class="collapsebtn">+</a></b></div><ul class="fields cat'+i+'subcatothers hidden">';
+      for (var j = 0; j < subcatKeys.length;j++){
+        var fields = subcat[subcatKeys[j]];
+        if (fields.length == 1){
+          conHtml += '<input class="dataField" type="radio" name="field" onclick=app.fromCategory(this) field="'+fields[0]+'">'+app._getFieldLabel(fields[0])+'<br>';
+          nosingle = false
+        }
+      }
+      if (!noSingle) html += conhtml+'</ul></div>';
       html += '</ul>';
     }
     $('.category-list').html(html);
@@ -104,7 +131,8 @@ app.createHelpers = function(){
     });
   }
   // function to get text based on field NAME
-  app._getFieldLabel = function(fieldname){
+  app._getFieldLabel = function(fieldname, onlyLabel){
+    if (onlyLabel) return app.shortLabelObject[fieldname]?app.shortLabelObject[fieldname]:("<i>("+fieldname+")</i>");
     return (app.labelObject[fieldname])?app.labelObject[fieldname]:("<i>("+fieldname+")</i>");
   }
 
