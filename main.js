@@ -97,7 +97,7 @@ app.createHelpers = function(){
       }
       // console.log(noSingle, !noSingle);
       if (! noSingle) html += conHtml+'</ul></div>';
-      html += '</ul>';
+      html += '</ul></div>';
     }
     $('.category-list').html(html);
   }
@@ -113,16 +113,27 @@ app.createHelpers = function(){
           onEachFeature: function(feature, layer){
             layer.on('click',app.showLayerData);
             layer.on('mouseover', function (e) {
-              this.bindPopup(feature.properties.DISTRICT+'<br>'+app._getFieldLabel($("#dataDropdown").val())
+              // this.bindPopup(feature.properties.DISTRICT+'<br>'+app._getFieldLabel($("#dataDropdown").val())
+              //             +" : "+this.feature.properties.data);
+              // this.openPopup();
+              $("#hoverinfotitle .placehodler").addClass('hidden');
+              $("#hoverinfodetails .placehodler").addClass('hidden');
+              $("#hoverinfotitle .title").removeClass('hidden');
+              $("#hoverinfodetails .details").removeClass('hidden');
+              $("#hoverinfotitle .title").html(feature.properties.DISTRICT);
+              $("#hoverinfodetails .details").html(app._getFieldLabel($("#dataDropdown").val())
                           +" : "+this.feature.properties.data);
-              this.openPopup();
             });
             layer.on('mousemove', function (e) {
-              var popup = e.target.getPopup();
-              popup.setLatLng(e.latlng);
+              // var popup = e.target.getPopup();
+              // popup.setLatLng(e.latlng);
             });
             layer.on('mouseout', function (e) {
-              this.closePopup();
+              // this.closePopup();
+              $("#hoverinfotitle .placehodler").removeClass('hidden');
+              $("#hoverinfodetails .placehodler").removeClass('hidden');
+              $("#hoverinfotitle .title").addClass('hidden');
+              $("#hoverinfodetails .details").addClass('hidden');
             });
           }
         }).addTo(app.map);
@@ -188,6 +199,26 @@ app.createHelpers = function(){
     };
     app.gradientControl.addTo(app.map);
     $("#gradientDropdown").select2({templateResult: app._styleSelect2});
+  }
+  // add hover info box
+  app.addHoverInfoBox = function(){
+    if(app.hoverInfoControl) app.map.removeControl(app.hoverInfoControl);
+    app.hoverInfoControl = L.control({position: 'bottomleft'});
+    app.hoverInfoControl.onAdd = function (map) {
+        var div = L.DomUtil.create('div', 'info legend');
+        var html = '<div id="hoverinfotitle">';
+        html += '<b><span class="placehodler">Hover over a feature</span>';
+        html += '<span class="title"></span></b>';
+        html += '</div><hr>';
+        html += '<div id="hoverinfodetails">';
+        html += '<span class="placehodler">Move cursor over a feature in the map to view current Information</span>';
+        html += '<span class="details"></span>';
+        html += '</div>';
+        div.innerHTML = html;
+        div.firstChild.onmousedown = div.firstChild.ondblclick = L.DomEvent.stopPropagation;
+        return div;
+    };
+    app.hoverInfoControl.addTo(app.map);
   }
   // style gradient select2
   app._styleSelect2 = function(state){
@@ -264,15 +295,62 @@ app.createHelpers = function(){
     var name = e.sourceTarget.feature.properties[app.GEOMNAMEFIELD];
     var thisdata = app.dataObject[name];
     $('.modal-title').html(name);
-    var contenthtml = '<table border="1" id="data-table">';
-    for (var i = app.NAMEINDEX+1; i< app.headers.length; i++){
-      var head = app._getFieldLabel(app.headers[i]);
-      var data = thisdata[i];
-      // console.log(head,data);
-      contenthtml+= '<tr><th>'+head+'</th><td>'+data+'</td>';
+    var catkeys = Object.keys(app.categoryObject);
+    var html = ''
+    var modalChart = {};
+    var modalTable = {};
+    for (var i = 0; i<catkeys.length; i++){
+      html += '<div class="collapsebtn-container category-head" onClick=app.expandCategory(this) target="modalcat'+i+'">'+catkeys[i]+'<a class="collapsebtn">+</a></div><ul class="fields modalcat'+i+' hidden">';
+      var subcat = app.categoryObject[catkeys[i]];
+      var subcatKeys = Object.keys(subcat);
+      var conHtml = '<div id="modaltable'+i+'"></div>';
+      var tabledata = [['Other Indicators', 'Value']];
+      var noSingle = true;
+      //show graph for values
+      for (var j = 0; j < subcatKeys.length;j++){
+        var fields = subcat[subcatKeys[j]];
+        if (fields.length == 1){
+          tabledata.push([app._getFieldLabel(fields[0],true),thisdata[app.headers.indexOf(fields[0])]]);
+          noSingle = false;
+          continue;
+        }
+        html += '<div class="modalchart-container" ><b>'+subcatKeys[j]+'</b></div>';
+        var graphdata = [['field','value']];
+        for (var k = 0; k < fields.length;k++){
+          graphdata.push([app._getFieldLabel(fields[k],true),parseFloat(thisdata[app.headers.indexOf(fields[k])])]);
+        }
+        modalChart['modalchart'+i+j] = graphdata;
+        html += '<div class=modalchart id="modalchart'+i+j+'"> </div>';
+      }
+      if (! noSingle) {
+        modalTable['modaltable'+i] = tabledata;
+        html += conHtml;
+      }
+      html += '</ul></div>';
     }
-    contenthtml += '</table>';
-    $('.modal-body').html(contenthtml);
+    $('.modal-body').html(html);
+    var options = {
+      title:'',
+      bar: {groupWidth: "55%"},
+      legend: { position: "none" },
+      vAxis : { textPosition : 'in' }
+    };
+    var chartIDs = Object.keys(modalChart);
+    for (var i = 0; i < chartIDs.length; i++){
+      var data = google.visualization.arrayToDataTable(modalChart[chartIDs[i]]);
+      var tempoptions = options;
+      tempoptions.height = modalChart[chartIDs[i]].length*40;
+      var chart = new google.visualization.BarChart(document.getElementById(chartIDs[i]));
+      chart.draw(data, tempoptions);
+    }
+    var tableIDs = Object.keys(modalTable);
+    for (var i = 0; i < tableIDs.length; i++){
+      var data = google.visualization.arrayToDataTable(modalTable[tableIDs[i]]);
+      var tempoptions = options;
+      tempoptions.height = modalTable[tableIDs[i]].length*30;
+      var chart = new google.visualization.Table(document.getElementById(tableIDs[i]));
+      chart.draw(data, options);
+    }
     $('#dataModal').modal('show');
   }
   app.expandCategory = function(element){
@@ -320,10 +398,14 @@ app.initUI = function(){
   app.baseMap = L.tileLayer(app.BASELAYER);
   app.baseMap.addTo(app.map);
   app.buildGradientControl();
+  app.addHoverInfoBox();
   // app.addSidebarControl();
 };
 
 app.initialize = function(){
+  google.charts.load('current', {'packages':['corechart','table']});
+  // google.charts.load('current', {'packages':['table']});
+
   app.createConstants();
   app.createHelpers();
 
