@@ -1,6 +1,8 @@
 <html>
 <head>
   <title>Nishanta Khanal</title>
+  <LINK REL="SHORTCUT ICON"
+       HREF="./icon.jpg">
   <style>
     html,body{
       margin:0;
@@ -16,10 +18,12 @@
       grid-auto-rows: minmax(100px,auto);
     }
     .grid-container > div {
+      position:relative;
       background-color: rgba(255, 255, 255);
-      box-shadow:lightgray 2px 2px 5px 2px;
+      box-shadow:rgba(0,0,0,0.2) 2px 2px 3px 2px;
       text-align: center;
       font-size: 30px;
+      transition-duration:0.3s;
     }
     .photo {
       grid-row-start: 1;
@@ -30,18 +34,10 @@
       background-image:url('./Nishanta.jpg');
       background-position: 50% 40%;
       background-size:200% auto;
-      transition-duration:0.3s;
-      -moz-filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
-      -o-filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
-      -webkit-filter: grayscale(100%);
-      filter:grayscale(100%);
     }
-    .photo:hover {
-      background-size:205% auto;
-      -moz-filter: none;
-      -o-filter: none;
-      -webkit-filter: none;
-      filter: none;
+    .photo > a {
+      height:100%;
+      width:100%;
     }
     .item2 {
       grid-row-start: 2;
@@ -49,6 +45,9 @@
       grid-column-start: 5;
       grid-column-end: 9;
       z-index:4;
+      background-image:url('./portfolio.jpg');
+      background-position: 50% 50%;
+      background-size:200% auto;
     }
     .item3 {
       grid-row-start: 4;
@@ -56,24 +55,55 @@
       grid-column-start: 4;
       grid-column-end: 8;
       z-index:3;
+      background-image:url('./contact.jpg');
+      background-position: 50% 50%;
+      background-size:200% auto;
     }
     .item4 {
       grid-row-start: 3;
       grid-row-end: 7;
       grid-column-start: 1;
-      grid-column-end: 6;
+      grid-column-end: 5;
+      z-index: 2;
+      background-image:url('./blog.jpg');
+      background-position: 50% 50%;
+      background-size:200% auto;
     }
     .raise-on-hover:hover{
       z-index: 999;
+    }
+    .title{
+      position: absolute;
+      color: white;
+      background: rgba(0,0,0,0.3);
+      padding:0px 5px;
+      font-family: monospace;
+      font-weight: bold;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .grayout{
+      -moz-filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+      -o-filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+      -webkit-filter: grayscale(100%);
+      filter:grayscale(100%);
+    }
+    .grayout:hover{
+      background-size:205% auto;
+      -moz-filter: none;
+      -o-filter: none;
+      -webkit-filter: none;
+      filter: none;
     }
   </style>
 </head>
 <body>
   <div class="grid-container">
-    <div class="photo"></div>
-    <div class="item2 raise-on-hover">2</div>
-    <div class="item3 raise-on-hover">Nishanta Khanal</div>
-    <div class="item4 raise-on-hover">4</div>
+    <div class="photo grayout" onclick="location.href=/about/"></div>
+    <div class="item2 grayout raise-on-hover" onclick="location.href=/portfolio/"><span class="title">PORTFOLIO</span></div>
+    <div class="item3 grayout raise-on-hover" onclick="location.href=/contact/"><span class="title">CONTACT ME</span></div>
+    <div class="item4 grayout raise-on-hover" onclick="location.href=/blogs/"><span class="title">BLOGS</span></div>
   </div>
 </body>
 </html>
