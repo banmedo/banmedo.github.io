@@ -6,7 +6,7 @@
   <style>
     html,body{
       margin:0;
-      padding:0 10%;
+      padding:0% 10%;
       height:100%;
       /* width:100%; */
     }
@@ -99,6 +99,17 @@
     }
 
     @media (orientation:portrait){
+      html, body{
+        padding:0%;
+      }
+      .grid-container{
+        height:80%;
+        width:calc(100% - 20px);
+        position:absolute;
+        top:0;
+        bottom:0;
+        margin:auto;
+      }
       .photo{
         grid-column-start: 1;
         grid-column-end: 3;
