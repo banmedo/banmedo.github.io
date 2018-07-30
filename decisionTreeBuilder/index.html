@@ -1,0 +1,398 @@
+<html>
+<head>
+  <link href="./css/bootstrap.min.css" rel="stylesheet"/>
+  <script src="./js/jquery-2.2.0.js"></script>
+  <script src="./js/jquery-ui.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <style>
+    /*Now the CSS*/
+    * {margin: 0; padding: 0;}
+
+    #root-element{
+      width:auto;
+    }
+
+    #root-element-container {
+        width:2000px;
+    }
+
+    #root-element-container::after {
+      content: "";
+      display: inline-block;
+      clear:both;
+    }
+
+    .tree ul {
+    padding-top: 20px; position: relative;
+
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    }
+
+    .tree li {
+    float: left; text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 20px 5px 0 5px;
+
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    }
+
+    /*We will use ::before and ::after to draw the connectors*/
+
+    .tree li::before, .tree li::after{
+    content: '';
+    position: absolute; top: 0; right: 50%;
+    border-top: 1px solid #ccc;
+    width: 50%; height: 20px;
+    }
+    .tree li::after{
+    right: auto; left: 50%;
+    border-left: 1px solid #ccc;
+    }
+
+    /*We need to remove left-right connectors from elements without
+    any siblings*/
+    .tree li:only-child::after, .tree li:only-child::before {
+    display: none;
+    }
+
+    /*Remove space from the top of single children*/
+    .tree li:only-child{ padding-top: 0;width:100%;}
+
+    /*Remove left connector from first child and
+    right connector from last child*/
+    .tree li:first-child::before, .tree li:last-child::after{
+    border: 0 none;
+    }
+    /*Adding back the vertical connector to the last nodes*/
+    .tree li:last-child::before{
+    border-right: 1px solid #ccc;
+    border-radius: 0 5px 0 0;
+    -webkit-border-radius: 0 5px 0 0;
+    -moz-border-radius: 0 5px 0 0;
+    }
+    .tree li:first-child::after{
+    border-radius: 5px 0 0 0;
+    -webkit-border-radius: 5px 0 0 0;
+    -moz-border-radius: 5px 0 0 0;
+    }
+
+    /*Time to add downward connectors from parents*/
+    .tree ul ul::before{
+    content: '';
+    position: absolute; top: 0; left: 50%;
+    border-left: 1px solid #ccc;
+    width: 0; height: 20px;
+    }
+
+    .tree li a{
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #666;
+    font-family: arial, verdana, tahoma;
+    font-size: 11px;
+    display: inline-block;
+
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    }
+
+    .tree li a.non-terminal{
+      border-radius: 50%;
+      background-color: #fb8d8d;
+      color: white;
+    }
+
+    .tree li a.link{
+      border-radius: 50%;
+    }
+    /*Time for some hover effects*/
+    /*We will apply the hover effect the the lineage of the element also*/
+    .tree li a:hover, .tree li a:hover+ul li a {
+    background: #c8e4f8; color: #000; border: 1px solid #94a0b4;
+    }
+    /*Connector styles on hover*/
+    .tree li a:hover+ul li::after,
+    .tree li a:hover+ul li::before,
+    .tree li a:hover+ul::before,
+    .tree li a:hover+ul ul::before{
+    border-color:  #94a0b4;
+    }
+
+    .fullheight{
+      min-height:100%;
+      padding:0;
+    }
+
+    #codespace{
+      background-color:#fafafa;
+      padding:10px;
+      word-wrap: break-word;
+    }
+    /*Thats all. I hope you enjoyed it.
+    Thanks :)*/
+  </style>
+</head>
+<body>
+  <div class="col-lg-12 fullheight">
+    <div class="col-lg-8 fullheight" style="overflow:auto">
+      <div class="tree">
+    	<!--ul>
+    		<li>
+    			<a href="#">Parent</a>
+    			<ul>
+    				<li>
+    					<a href="#">Child</a>
+    					<ul>
+    						<li>
+    							<a href="#">Grand Child</a>
+    						</li>
+    					</ul>
+    				</li>
+    				<li>
+    					<a href="#">Child</a>
+    					<ul>
+    						<li><a href="#">Grand Child</a></li>
+    						<li>
+    							<a href="#">Grand Child</a>
+    							<ul>
+    								<li>
+    									<a href="#">Great Grand Child</a>
+    								</li>
+    								<li>
+    									<a href="#">Great Grand Child</a>
+    								</li>
+    								<li>
+    									<a href="#">Great Grand Child</a>
+    								</li>
+    							</ul>
+    						</li>
+    						<li><a href="#">Grand Child</a></li>
+    					</ul>
+    				</li>
+    			</ul>
+    		</li>
+    	</ul-->
+      </div>
+    </div>
+    <div class="col-lg-4 fullheight" id="codespace">
+    </div>
+  </div>
+  <div class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Modal title</h5>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <input type="hidden" class="form-control" ind="" id="ind" style="display:none">
+            <input type="hidden" class="form-control" ind="" id="dir" style="display:none">
+            <div class="checkbox">
+              <label><input type="checkbox" id="terminal"> Terminal</label>
+            </div>
+            <div id="terminal-form" style="display:none">
+              <label for="primitive">Name</label>
+              <input type="text" class="form-control" id="name">
+            </div>
+            <div id="non-terminal-form">
+              <label for="primitive">Primitive</label>
+              <input type="text" class="form-control" id="primitive">
+              <label for="primitive">Threshold</label>
+              <input type="text" class="form-control" id="threshold">
+              <!--label for="primitive">Less</label>
+              <input type="text" class="form-control" id="less">
+              <label for="primitive">More or equal</label>
+              <input type="text" class="form-control" id="more"-->
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" onClick="update_tree()">Save</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+  <script>
+    tree = { 'SFW':  {band: 'surface_water', threshold: 70, left: 'terminal', leftName: 'Water', right: 'STL'},
+      'STL':  {band: 'settlement', threshold: 40, left: 'terminal', leftName: 'Settlement', right: 'CRP'},
+      'CRP':  {band: 'cropland', threshold: 40, left: 'WTL', rightName: 'Cropland', right: 'terminal'},
+      'WTL':  {band: 'wetland', threshold: 60, left: 'terminal', leftName: 'Wetland', right: 'FOR'},
+      'FOR':  {band: 'forest', threshold: 40, left: 'terminal', leftName: 'Forest', right: 'GRS'},
+      'GRS':  {band: 'grassland', threshold: 40, left: '123', leftName: 'Grassland', right: 'qwe', rightName: 'Otherland'}
+    };
+    tree = {'root': {band: 'example', threshold: 50, left: 'l1L', right: 'l1R'} }
+
+    //start_ind = 'SFW';
+    var start_ind = 'root';
+
+    var temp_stack = {};
+
+    function newid(n) {
+      var text = "";
+      var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+      for (var i = 0; i < n; i++)
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+      return text;
+    }
+
+    function build_tree(){
+      $(".tree").html('<ul id="root-element-container"><li id = "root-element"><a href="#" ind="root" dir="root">root</a>'+build_tree_html(tree, start_ind)+"</ul></li>");
+      register_clicks();
+      $("#codespace").empty();
+      $("#codespace").append("var nodeStruct = "+JSON.stringify(temp_stack));
+      $("#codespace").append("<br><br>var startId = &#39;"+start_ind+"&#39;");
+    }
+
+    function build_tree_html(tree, startId){
+      temp_stack[startId] = tree[startId];
+      var node = tree[startId];
+      var html = "<ul><li>";
+      var left = tree[startId]['left'];
+      var right = tree[startId]['right'];
+      var left_threshold = tree[startId]['band']+'&gt='+tree[startId]['threshold'];
+      var right_threshold = tree[startId]['band']+'&lt'+tree[startId]['threshold'];
+
+      html += left_threshold + '<ul><li>';
+      if (left=='terminal') html += '<a href="#" ind='+startId+' dir=L class="terminal">'+tree[startId]['leftName']+'</a>';
+      else if (tree[left] === undefined) html += '<a href="#" class="non-terminal" ind='+startId+' dir=L></a>';
+      else html += '<a href="#" ind='+startId+' class="link" dir=L ></a>'+build_tree_html(tree, left);
+
+      html += "</li></ul></li><li>"+right_threshold+'<ul><li>';
+      if (right=='terminal') html += '<a href="#" ind='+startId+' class="terminal" dir=R >'+tree[startId]['rightName']+'</a>';
+      else if (tree[right] === undefined) html += '<a href="#" class="non-terminal" ind='+startId+' dir=R ></a>';
+      else html += '<a href="#" ind='+startId+' class="link" dir=R ></a>'+build_tree_html(tree, right);
+      html += "</li></ul></ul>";
+      return html;
+    }
+
+    function toggle_forms(is_terminal){
+      if (is_terminal){
+        $("#non-terminal-form").css('display','none');
+        $("#terminal-form").css('display','block');
+      }else{
+        $("#non-terminal-form").css('display','block');
+        $("#terminal-form").css('display','none');
+      }
+    }
+
+    function update_tree(){
+      var ind = $("#ind").val();
+      var dir = $("#dir").val();
+      //if its root element
+      if (dir == 'root'){
+        tree['root']['threshold'] = parseInt($("#threshold").val());
+        tree['root']['band'] =  $("#primitive").val();
+      }
+      //if its a terminal class
+      else if ($("#terminal").prop('checked')){
+        var name = $("#name").val();
+        var d = (dir == 'L')? 'left':'right';
+        var n = (dir == 'L')? 'leftName':'rightName';
+        tree[ind][d] = 'terminal';
+        tree[ind][n] = name;
+      }else {
+        var threshold = parseInt($("#threshold").val());
+        var primitive = $("#primitive").val();
+        var d = (dir == 'L')? 'left':'right';
+        var n = (dir == 'L')? 'leftName':'rightName';
+        var parent = tree[ind];
+        var selfid = parent[d];
+        var self = tree[selfid];
+        if (selfid=='terminal' || self == undefined){
+          selfid = newid('16');
+          parent[d] = selfid;
+          self = tree[selfid] = {};
+          var Lid = newid ('16');
+          var Rid = newid ('16');
+          self['left'] = Lid;
+          self['right'] = Rid;
+        }
+        self['band'] = primitive;
+        self['threshold'] = threshold;
+      }
+      build_tree();
+      $(".modal").modal("hide");
+    }
+
+
+    function register_clicks(){
+      $(".tree li a").on('click', function(e){
+        var ind = $(this).attr('ind');
+        var dir = $(this).attr('dir');
+        $("#ind").val(ind);
+        $("#dir").val(dir);
+        $("#primitive").val("");
+        $("#name").val("");
+        $("#threshold").val("");
+        $("#terminal").prop('disabled',false);
+        if (dir == 'root'){
+          $("#terminal").prop('disabled','disabled');
+          $("#primitive").val(tree['root']['band']);
+          $("#threshold").val(tree['root']['threshold']);
+        }
+        else if ($(this).hasClass("terminal")){
+          $("#terminal").prop('checked',true);
+          var n = (dir == 'L')? 'leftName':'rightName';
+          $("#name").val(tree[ind][n]);
+          $(".modal-title").html("Configure "+tree[ind][n]);
+          toggle_forms(true);
+        }
+        else if($(this).hasClass("non-terminal")){
+          $("#terminal").prop('checked',false);
+          $(".modal-title").html("Configure New Node ");
+          toggle_forms(false);
+        }
+        else if($(this).hasClass("link")){
+          $("#terminal").prop('checked',false);
+          var d = (dir == 'L')? 'left':'right';
+          self = tree[tree[ind][d]];
+          console.log(self);
+          $("#primitive").val(self['band']);
+          $("#threshold").val(self['threshold']);
+          $(".modal-title").html("Configure Node ");
+          toggle_forms(false);
+        }
+        $(".modal").modal();
+      });
+    }
+
+    $("#terminal").on('change',function(e){
+      toggle_forms(this.checked);
+    });
+
+    build_tree();
+  </script>
+</html>
+
+<!--ul>
+  <li>surface_water>=70
+    <ul>
+      <li>
+        <a href="#" ind=SFW dir=L class="terminal">Water</a>
+      </li>
+    </ul>
+  </li>
+  <li>surface_water<70
+    <ul>
+      <li>
+        <a href="#" ind=SFW class="link" dir=R ></a>
+        <ul>
+          <li>settlement>=40<ul>
+            <li>
+              <a href="#" ind=STL dir=L class="terminal">
+                Settlement</a></li></ul></li><li>settlement<40<ul><li><a href="#" ind=STL class="link" dir=R ></a><ul><li>cropland>=40<ul><li><a href="#" ind=CRP class="link" dir=L ></a><ul><li>wetland>=60<ul><li><a href="#" ind=WTL dir=L class="terminal">Wetland</a></li></ul></li><li>wetland<60<ul><li><a href="#" ind=WTL class="link" dir=R ></a><ul><li>forest>=40<ul><li><a href="#" ind=FOR dir=L class="terminal">Forest</a></li></ul></li><li>forest<40<ul><li><a href="#" ind=FOR class="link" dir=R ></a><ul><li>grassland>=40<ul><li><a href="#" class="non-terminal" ind=GRS dir=L></a></li></ul></li><li>grassland<40<ul><li><a href="#" class="non-terminal" ind=GRS dir=R ></a></li></ul></ul></li></ul></ul></li></ul></ul></li></ul></li><li>grassland<40<ul><li><a href="#" class="non-terminal" ind=CRP dir=R ></a></li></ul></ul></li></ul></ul></li></ul>
+              </ul-->
